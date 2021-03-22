@@ -4,10 +4,10 @@
   a {
     width: 200px;
     height: 200px;
-    background-color: $orange;
+    background-color: $green;
     font-size: 20px;
     &:hover {
-      background-color: $hoverOrange;
+      background-color: $blue;
     }
   }
 }

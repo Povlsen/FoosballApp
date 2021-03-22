@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
-import users from './states/users'
+import players from './states/players'
 
 export default combineReducers({
-  users,
+  players,
 })

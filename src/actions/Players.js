@@ -5,9 +5,9 @@ import {
 
 export const getPlayers = _ => {
     return async dispatch => {
-        return axios.get('player/get').then(res => {
+        return axios.get('players/get').then(res => {
             dispatch({
-                type: SET_USER_LIST,
+                type: SET_PLAYER_LIST,
                 data: res.data
             })
         })

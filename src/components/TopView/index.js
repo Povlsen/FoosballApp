@@ -14,11 +14,11 @@ const TopView = props => (
                         </div>
                         <img class='pic' src={Emil}/>
                     </div>
-                    <p class='name-lable'>Emil</p>
+                    <p class='name-lable'>{props.users[0].displayName}</p>
                 </div>
                 <div class='podium-item-1'>
-                    <p class='wins-lable'>17 wins</p>
-                    <p class='percentages-lable'>64%</p>
+                    <p class='wins-lable'>{props.users[0].wins} wins</p>
+                    <p class='percentages-lable'>{props.users[0].percentage} %</p>
                 </div>
             </div>
             <div class='podium-item'>
@@ -32,8 +32,8 @@ const TopView = props => (
                     <p class='name-lable'>Emil</p>
                 </div>
                 <div class='podium-item-2'>
-                    <p class='wins-lable'>17 wins</p>
-                    <p class='percentages-lable'>64%</p>
+                    <p class='wins-lable'>{props.users[1].wins} wins</p>
+                    <p class='percentages-lable'>{props.users[1].percentage} %</p>
                 </div>
             </div>
             <div class='podium-item'>
@@ -47,8 +47,8 @@ const TopView = props => (
                     <p class='name-lable'>Emil</p>
                 </div>
                 <div class='podium-item-3'>
-                    <p class='wins-lable'>17 wins</p>
-                    <p class='percentages-lable'>64%</p>
+                    <p class='wins-lable'>{props.users[2].wins} wins</p>
+                    <p class='percentages-lable'>{props.users[2].percentage} %</p>
                 </div>
             </div>
         </div>

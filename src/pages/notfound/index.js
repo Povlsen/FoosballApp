@@ -1,5 +1,5 @@
 import React from 'react'
-import './index.scss'
+import '../../styling/index.scss'
 
 const NotFound = _ => (
   <div className='notfound'>404 Not found!</div>

@@ -1,11 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import './App.scss'
+import '../styling/App.scss'
+import TopView from '../components/TopView'
 
 const App = _ => (
-  <div>
-    <p>TEST</p>
-  </div>
+ <TopView />
 )
 
 export default App

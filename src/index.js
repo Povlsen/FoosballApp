@@ -6,9 +6,9 @@ import store, { history } from './redux/store'
 
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
 import * as serviceWorker from './serviceWorker'
-import './index.scss'
+import './styling/index.scss'
 
-import App from './App'
+import App from './pages/App'
 import NotFound from './pages/notfound/index.js'
 
 axios.defaults.baseURL = process.env.REACT_APP_API_URL

@@ -6,7 +6,70 @@
     height: 35%;
     width: 100%;
     margin: 0;
-    margin-top: -16px;
-    
+    margin-top: -20px;
     border-radius: 0% 0% 20px 20px;
+
+    .heading {
+        color: $white;
+        text-align: center;
+        padding-top: 20px;
+        font-size: 20px;
+    }
+
+    .podium {
+        width: 80%;
+        margin-left: 10%;
+
+        .podium-item {
+            text-align: center;
+            display: inline-block;
+            width: 33%;
+            height: 100%;
+
+            .podium-item-1-top {
+                height: 70%;
+
+                .pic {
+                    height: 70px;
+                    border-radius: 50%;
+                }
+            }
+
+            .podium-item-1 {
+                height: 30%;
+                background-color: rgba($black, 0.5);
+                border-radius: 20px 20px 0 0;
+            }
+
+            .podium-item-2-top {
+                height: 20%;
+                .pic {
+                    
+                    height: 70px;
+                    border-radius: 50%;
+                }
+            }
+
+            .podium-item-2 {
+                height: 80%;
+                background-color: rgba($black, 0.7);
+                border-radius: 20px 20px 0 0;
+            }
+
+            .podium-item-3-top {
+                height: 70%;
+                .pic {
+                    
+                    height: 70px;
+                    border-radius: 50%;
+                }
+            }
+
+            .podium-item-3 {
+                height: 30%;
+                background-color: rgba($black, 0.5);
+                border-radius: 20px 20px 0 0;
+            }
+        }
+    }        
 }

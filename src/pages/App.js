@@ -4,7 +4,8 @@ import '../styling/App.scss'
 import TopView from '../components/TopView'
 
 const App = _ => (
- <TopView />
+ <TopView 
+    headline='Leaderboard' />
 )
 
 export default App

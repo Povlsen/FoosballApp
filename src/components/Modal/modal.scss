@@ -1,0 +1,45 @@
+@import '../../styling/theme.scss';
+
+#greyOverlay {
+    color: $grey;
+    opacity: 70;
+}
+
+#background {
+    color: $grey;
+}
+
+.pointGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 50px;
+}
+
+.pointGrid > Grid > paper {
+    width: 50px;
+    height: 50px;
+}
+
+.teamsGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 50px;
+}
+
+.playerGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.playerGridTitle {
+    color: $green;
+}
+
+.playerGrid > Grid > img {
+    border-radius: 50%;
+}
+
+.button {
+    background: linear-gradient(150deg, $blue 0%, $green 100%);
+    margin: auto;
+}

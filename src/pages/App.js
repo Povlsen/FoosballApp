@@ -1,9 +1,11 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import '../styling/App.scss'
-import TopView from '../components/TopView'
+import React, { useEffect } from 'react'
+import { connect } from 'react-redux'
+import { getScoreBoard } from '../actions/Scoreboard'
 
-const leaderboard = [
+import TopView from '../components/TopView'
+import '../styling/App.scss'
+
+/*const leaderboard = [
     {
         "displayName" : "Emil",
         "wins" : 17,
@@ -19,13 +21,25 @@ const leaderboard = [
         "wins" : 15,
         "percentage" : 66
     }
-]
+]*/
 
-const App = _ => (
-    <TopView 
-        headline='Leaderboard'
-        users={leaderboard}
-    />
-)
+const App = ({ leaderboard, getScoreBoard }) => {
+    useEffect(_ => {
+        getScoreBoard()
+    }, [])
 
-export default App
+    return (
+        <TopView 
+            headline='Leaderboard'
+            users={leaderboard}
+        />
+    )
+}
+
+const mapStateToProps = ({ scoreboard }) => ({
+    leaderboard: scoreboard.board
+})
+
+export default connect(mapStateToProps, {
+    getScoreBoard
+})(App)

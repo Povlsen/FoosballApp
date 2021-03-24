@@ -8,8 +8,8 @@ import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
 import * as serviceWorker from './serviceWorker'
 import './styling/index.scss'
 
-import App from './pages/App'
-import NotFound from './pages/notfound/index.js'
+import ScoreBoard from './pages/ScoreBoard'
+import NotFound from './pages/notfound'
 
 axios.defaults.baseURL = process.env.REACT_APP_API_URL
 
@@ -17,7 +17,7 @@ render(
     <Provider store={store}>
         <Router history={history}>
             <Switch>
-                <Route exact path='/' component={App} />
+                <Route exact path='/' component={ScoreBoard} />
                 <Route component={NotFound} />
             </Switch>
         </Router>

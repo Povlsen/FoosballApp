@@ -9,7 +9,8 @@ import * as serviceWorker from './serviceWorker'
 import './styling/index.scss'
 
 import ScoreBoard from './pages/ScoreBoard'
-import NotFound from './pages/notfound'
+import ProfileView from './pages/ProfileView'
+import NotFound from './pages/Notfound'
 
 axios.defaults.baseURL = process.env.REACT_APP_API_URL
 
@@ -18,6 +19,7 @@ render(
         <Router history={history}>
             <Switch>
                 <Route exact path='/' component={ScoreBoard} />
+                <Route exact path='/:playerId' component={ProfileView} />
                 <Route component={NotFound} />
             </Switch>
         </Router>

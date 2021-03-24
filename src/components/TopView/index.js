@@ -54,8 +54,7 @@ const TopView = ({ headline, users }) => {
                         <p class='percentages-lable'>{users[2].winRatio} %</p>
                     </div>
                 </div>
-            </div>
-            
+            </div>            
         </div>
     )
 }

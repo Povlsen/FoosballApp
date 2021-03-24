@@ -5,7 +5,7 @@ import {
 
 export const getPlayers = _ => {
     return async dispatch => {
-        return axios.get('players/get').then(res => {
+        return axios.get('player/all').then(res => {
             dispatch({
                 type: SET_PLAYER_LIST,
                 data: res.data
@@ -14,20 +14,14 @@ export const getPlayers = _ => {
     }
 }
 
-/*export const getPlayerById = userId => {
-    return dispatch => {
-        return axios.get('users/getbyid/' + userId)
-    }
-}*/
-
-export const postPlayer = data => {
-    return dispatch => {
-        return axios.post('players/post', data)
+export const getPlayerScoreDetails = playerId => {
+    return async dispatch => {
+        return axios.get('player/GetScoreDetails/' + playerId)
     }
 }
 
-export const deletePlayer = id => {
+export const postPlayer = data => {
     return dispatch => {
-        return axios.delete('players/delete/' + id)
+        return axios.post('player/post', data)
     }
 }

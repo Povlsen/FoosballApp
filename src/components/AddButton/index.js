@@ -1,10 +1,12 @@
 import React from 'react'
-import './TableView.scss'
-import Forfatter from '../../assets/Forfatter.png'
+import './AddButton.scss'
+import plus from '../../assets/plus.svg'
 
 const AddButton = props => ( 
     <div class="add-button">
-        <button>+</button>
+        <button>
+            <img src={plus} />
+        </button>
     </div>
 )
 

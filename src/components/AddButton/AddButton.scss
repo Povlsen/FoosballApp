@@ -1,1 +1,21 @@
 @import '../../styling/theme.scss';
+
+.add-button {
+    input, button, button:hover, button:visited, button:active  { border:none; outline:none;} 
+
+    button {
+        background-image: linear-gradient(150deg, $blue 0%, $green 100%);
+        width: 80px;
+        height: 80px;
+        border: nome;
+        border-radius: 50%;
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+        color: $white;
+
+        img {
+            height: 40px;
+        }
+    }
+}

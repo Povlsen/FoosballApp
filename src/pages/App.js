@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { getScoreBoard } from '../actions/Scoreboard'
+import AddButton from '../components/AddButton'
 import TableView from '../components/TableView'
 import TopView from '../components/TopView'
 import '../styling/App.scss'
@@ -19,6 +20,7 @@ const App = ({ leaderboard, getScoreBoard }) => {
             <TableView
                 users={leaderboard}
             />
+            <AddButton />
         </>
     )
 }

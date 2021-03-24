@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import ReactModal from 'react-modal';
 
 import './AddTeam.scss'
-import Player1 from 'src/assets/Forfatter.png'
-import Player2 from 'src/assets/emil.jpg'
-import Player3 from 'src/assets/Kenneth.png'
-import Player4 from 'src/assets/Nikolai.png'
+import Player1 from '../../assets/Forfatter.png'
+import Player2 from '../../assets/emil.jpg'
+import Player3 from '../../assets/Kenneth.png'
+import Player4 from '../../assets/Nikolai.png'
 
 import Team from './Team';
 

@@ -1,18 +1,18 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
-import { getScoreBoard } from '../actions/Scoreboard'
-import AddButton from '../components/AddButton'
-import TableView from '../components/TableView'
-import TopView from '../components/TopView'
-import '../styling/App.scss'
+import { getScoreBoard } from '../../actions/Scoreboard'
+import AddButton from '../../components/AddButton'
+import TableView from '../../components/TableView'
+import TopView from '../../components/TopView'
+import './ScoreBoard.scss'
 
-const App = ({ leaderboard, getScoreBoard }) => {
+const ScoreBoard = ({ leaderboard, getScoreBoard }) => {
     useEffect(_ => {
         getScoreBoard()
     }, [])
 
     return (
-        <div>
+        <>
             <TopView 
                 headline='Leaderboard'
                 users={leaderboard}
@@ -21,7 +21,7 @@ const App = ({ leaderboard, getScoreBoard }) => {
                 users={leaderboard}
             />
             <AddButton />
-        </div>
+        </>
     )
 }
 
@@ -31,4 +31,4 @@ const mapStateToProps = ({ scoreboard }) => ({
 
 export default connect(mapStateToProps, {
     getScoreBoard
-})(App)
+})(ScoreBoard)

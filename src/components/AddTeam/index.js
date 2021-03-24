@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import './modal.scss'
+import ReactModal from 'react-modal';
+
+import './AddTeam.scss'
 import Player1 from '../../assets/Forfatter.png'
 import Player2 from '../../assets/emil.jpg'
 import Player3 from '../../assets/Kenneth.png'
@@ -8,12 +10,18 @@ import Player4 from '../../assets/Nikolai.png'
 var teamOnePoints = 0;
 var teamTwoPoints = 0;
 
-const Modal = ({handleClose, show, children }) => {
+const AddTeam = ({handleClose, show, children }) => {
     if (show != true)
         return null
+
     return (
-        <div class='greyOverlay' onClick={handleClose}>
-            <div id='background'>
+        <ReactModal 
+            isOpen={show} 
+            onRequestClose={handleClose} 
+            className={'greyOverlay'}
+            contentElement={(props, children) => <div {...props} onClick={handleClose}>{children}</div>}
+            >
+            <div id='background' onClick={e => e.stopPropagation()}>
                 <h3 id='title'>New Match</h3>
                 <div class='pointGrid'>
                     <div>
@@ -64,7 +72,7 @@ const Modal = ({handleClose, show, children }) => {
                     <button>Add</button>
                 </div>
             </div>
-        </div>
+        </ReactModal>
     );
 };
 
@@ -92,4 +100,4 @@ function sendMatch(){
 
 }
 
-export default Modal
+export default AddTeam

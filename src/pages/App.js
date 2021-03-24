@@ -12,7 +12,7 @@ const App = ({ leaderboard, getScoreBoard }) => {
     }, [])
 
     return (
-        <>
+        <div>
             <TopView 
                 headline='Leaderboard'
                 users={leaderboard}
@@ -21,7 +21,7 @@ const App = ({ leaderboard, getScoreBoard }) => {
                 users={leaderboard}
             />
             <AddButton />
-        </>
+        </div>
     )
 }
 

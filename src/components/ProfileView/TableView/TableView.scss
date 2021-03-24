@@ -1,0 +1,64 @@
+@import '../../../styling/theme.scss';
+
+.table-view { 
+    
+    .table-heading {
+        margin-left: 5%;
+        margin-right: 5%;
+        display: grid;
+        grid-template-columns: 0.5fr 2fr 2fr 2fr 2fr 2fr 4fr 3fr 1fr;
+        
+        p {
+            margin-left: -5px;
+            color: $green;
+            font-size: 12px;
+            margin-top: 20px;
+            margin-bottom: 5px;
+        }
+
+        .heading-1 {
+            margin-left: 5px;
+        }
+
+    }
+
+    .table-data {
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-bottom: 6px;
+
+        .table-item {
+            display: grid;
+            text-align: center;
+            grid-template-columns: 0.5fr 2fr 2fr 1fr 2fr 2fr 6fr 3fr 3fr;
+            background-color: $grey;
+            border-radius: 20px;
+            height: 60px;
+            font-size: 12px;
+
+            img {
+                margin-left: 5px;
+                margin-top: 17px;
+                border-radius: 50%;
+                height: 25px;
+                width: 25px;
+            }
+
+            p {
+                margin-top: 20px;
+                font-size: 16px;
+            }
+            
+            .vs {
+                margin-left: 10px;
+                margin-right: 5px;
+            }
+
+            .item-score {
+                color: $red;
+            }
+            
+
+        }
+    }
+}

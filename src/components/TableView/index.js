@@ -29,9 +29,7 @@ const TableView = props => (
                 </div>
             )) 
         }
-
         
-
     </div>
 )
 

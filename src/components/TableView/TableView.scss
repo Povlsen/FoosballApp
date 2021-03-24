@@ -1,0 +1,70 @@
+@import '../../styling/theme.scss';
+
+.table-view { 
+    
+    .table-heading {
+        margin-left: 5%;
+        margin-right: 5%;
+        display: grid;
+        grid-template-columns: 1fr 1.5fr 2.5fr 1fr 1fr 1fr 1fr;
+        
+        p {
+            margin-left: -5px;
+            color: $green;
+            font-size: 12px;
+            margin-top: 20px;
+            margin-bottom: 5px;
+        }
+
+        .heading-1 {
+            margin-left: 5px;
+        }
+
+    }
+
+    .table-data {
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-bottom: 6px;
+
+        .table-item {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr 2.5fr 1fr 1fr 1fr 1fr;
+            background-color: $grey;
+            border-radius: 20px;
+            height: 60px;
+            font-size: 12px;
+
+            .item-number {
+                margin-top: 21px;
+                margin-left: 15px;
+                background-color: $green;
+                width: 18px;
+                height: 18px;
+                border-radius: 50%;
+                color: $grey;
+                font-weight: bolder;
+                text-align: center;
+            }
+
+            img {
+                margin-left: 5px;
+                margin-top: 10px;
+                border-radius: 50%;
+                height: 40px;
+                width: 40px;
+            }
+
+            p {
+                margin-top: 22px;
+            }
+
+            .item-name {
+                font-size: 14px;
+                font-weight: bold;
+                margin-top: 21px;
+            }
+
+        }
+    }
+}

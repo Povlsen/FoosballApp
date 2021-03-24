@@ -23,7 +23,7 @@ const TableView = props => (
                         <p class='item-name'>{user.displayName}</p>
                         <p class='item-wins'>{user.wins}</p>
                         <p class='item-losses'>{user.looses}</p>
-                        <p class='item-total'>{user.totalGames}</p>
+                        <p class='item-total'>{user.totalMatches}</p>
                         <p class='item-percentage'>{user.winRatio}%</p>
                     </div>
                 </div>

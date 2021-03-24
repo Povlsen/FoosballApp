@@ -13,17 +13,25 @@ const TableView = props => (
             <p>Total</p>
             <p>Rate</p>
         </div>
-        <div class='table-data'>
-            <div class='table-item'>
-                <div class='item-number'>4</div>
-                <img src={Forfatter} />
-                <p class='item-name'>LangNavn</p>
-                <p class='item-wins'>11</p>
-                <p class='item-losses'>12</p>
-                <p class='item-total'>23</p>
-                <p class='item-percentage'>47%</p>
-            </div>
-        </div>
+        
+        {
+            props.users.map((user,index) => (
+                <div class='table-data'>
+                    <div class='table-item'>
+                        <div class='item-number'>{index + 1}</div>
+                        <img src={Forfatter} />
+                        <p class='item-name'>{user.displayName}</p>
+                        <p class='item-wins'>{user.wins}</p>
+                        <p class='item-losses'>{user.looses}</p>
+                        <p class='item-total'>{user.totalGames}</p>
+                        <p class='item-percentage'>{user.winRatio}%</p>
+                    </div>
+                </div>
+            )) 
+        }
+
+        
+
     </div>
 )
 

@@ -16,7 +16,9 @@ const App = ({ leaderboard, getScoreBoard }) => {
                 headline='Leaderboard'
                 users={leaderboard}
             />
-            <TableView />
+            <TableView
+                users={leaderboard}
+            />
         </>
     )
 }

@@ -2,13 +2,15 @@
 
 $shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 
-#greyOverlay {
+.greyOverlay {
+    position: fixed;
     background-color: rgba($grey, 0.9);
     height: 100%;
     margin: 0%;
     display: flex;
     justify-content: center;
     align-items: center;
+
     #background {
         background-color: $black;
         width: 90%;

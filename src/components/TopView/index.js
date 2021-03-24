@@ -17,11 +17,11 @@ const TopView = ({ headline, users }) => {
                             </div>
                             <img class='pic' src={Emil}/>
                         </div>
-                        <p class='name-lable'>{users[0].displayName}</p>
+                        <p class='name-lable'>{users[1].displayName}</p>
                     </div>
                     <div class='podium-item-1'>
-                        <p class='wins-lable'>{users[0].wins} wins</p>
-                        <p class='percentages-lable'>{users[0].winRatio} %</p>
+                        <p class='wins-lable'>{users[1].wins} wins</p>
+                        <p class='percentages-lable'>{users[1].winRatio} %</p>
                     </div>
                 </div>
                 <div class='podium-item'>
@@ -32,11 +32,11 @@ const TopView = ({ headline, users }) => {
                             </div>
                             <img class='pic' src={Emil}/>
                         </div>
-                        <p class='name-lable'>Emil</p>
+                        <p class='name-lable'>{users[0].displayName}</p>
                     </div>
                     <div class='podium-item-2'>
-                        <p class='wins-lable'>{users[1].wins} wins</p>
-                        <p class='percentages-lable'>{users[1].winRatio} %</p>
+                        <p class='wins-lable'>{users[0].wins} wins</p>
+                        <p class='percentages-lable'>{users[0].winRatio} %</p>
                     </div>
                 </div>
                 <div class='podium-item'>
@@ -47,7 +47,7 @@ const TopView = ({ headline, users }) => {
                             </div>
                             <img class='pic' src={Emil}/>
                         </div>
-                        <p class='name-lable'>Emil</p>
+                        <p class='name-lable'>{users[2].displayName}</p>
                     </div>
                     <div class='podium-item-3'>
                         <p class='wins-lable'>{users[2].wins} wins</p>

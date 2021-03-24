@@ -1,0 +1,48 @@
+@import '../../../styling/theme.scss';
+
+$shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+
+.playerGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 5px;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    h4 {
+        text-align: bottom;
+        color: $green;
+        height: 30px;
+        margin: 0%;
+    }
+    div {
+        box-shadow: $shadow;
+        border-radius: 50%;
+        background-color: $black;
+        height: 40px;
+        width: 40px;
+        input {
+            margin: 0%;
+            padding: 0%;
+            width: 40px;
+            height: 40px;
+            background: transparent;
+            border-color: transparent;
+            text-align: center;
+            color: $white;
+            
+        }
+        input:focus {
+            outline-color: transparent;
+            outline-width: 0px;
+        }
+        input:hover{
+            border-radius: 50%;
+            border-color: $red;
+        }
+    }
+    img {
+        border-radius: 50%;
+        max-height: 40px;
+    }
+}

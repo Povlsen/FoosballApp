@@ -1,11 +1,13 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import ReactModal from 'react-modal';
 
 import './AddTeam.scss'
-import Player1 from '../../assets/Forfatter.png'
-import Player2 from '../../assets/emil.jpg'
-import Player3 from '../../assets/Kenneth.png'
-import Player4 from '../../assets/Nikolai.png'
+import Player1 from 'src/assets/Forfatter.png'
+import Player2 from 'src/assets/emil.jpg'
+import Player3 from 'src/assets/Kenneth.png'
+import Player4 from 'src/assets/Nikolai.png'
+
+import Team from './Team';
 
 var teamOnePoints = 0;
 var teamTwoPoints = 0;
@@ -14,7 +16,7 @@ const AddTeam = ({handleClose, show, children }) => {
     if (show != true)
         return null
 
-    return (
+    /*return (
         <ReactModal 
             isOpen={show} 
             onRequestClose={handleClose} 
@@ -69,7 +71,57 @@ const AddTeam = ({handleClose, show, children }) => {
                     </div>
                 </div>
                 <div class='buttonHolder'>
-                    <button>Add</button>
+                    <button onClick={sendMatch}>Add</button>
+                </div>
+            </div>
+        </ReactModal>
+    );*/
+    return (
+        <ReactModal 
+            isOpen={show} 
+            onRequestClose={handleClose} 
+            className={'greyOverlay'}
+            contentElement={(props, children) => <div {...props} onClick={handleClose}>{children}</div>}
+            >
+            <div id='background' onClick={e => e.stopPropagation()}>
+                <h3 id='title'>New Match</h3>
+                <div class='pointGrid'>
+                    <div>
+                        <div id='teamOnePoints'><p>{teamOnePoints}</p></div>
+                    </div>
+                    <div>
+                        <div id='teamTwoPoints'><p>{teamTwoPoints}</p></div>
+                    </div>
+                </div>
+                <div class="selectTeamGrid">
+                    <div>
+                        <img src={Player1}></img>
+                        <img src={Player2}></img>
+                        <button>Manage team &gt;</button>
+                    </div>
+                    <h4>Vs.</h4>
+                    <div>
+                        <img src={Player3}></img>
+                        <img src={Player4}></img>
+                        <button>Manage team &gt;</button>
+                    </div>
+                </div>
+                <div id='teamsHolder'>
+                    <div id='teamOne' class="teamsGrid">
+                        <span width='50px'></span>
+                        <h4>GF</h4>
+                        <h4>GA</h4>
+                        <Team id='TeamOne' player1ImgSrc={Player1} player2ImgSrc={Player2}/>
+                    </div>
+                    <div id='teamTwo' class="teamsGrid">
+                        <h4>GF</h4>
+                        <h4>GA</h4>
+                        <span width='50px'></span>
+                        <Team id='TeamTwo' player1ImgSrc={Player3} player2ImgSrc={Player4}/>
+                    </div>
+                </div>
+                <div class='buttonHolder'>
+                    <button onClick={sendMatch}>Add</button>
                 </div>
             </div>
         </ReactModal>

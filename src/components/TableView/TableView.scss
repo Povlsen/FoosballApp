@@ -1,0 +1,23 @@
+@import '../../styling/theme.scss';
+
+.table-view { 
+    text-align: center;
+    
+    .table {
+        .table-heading {
+            th {
+                font-size: 12px;
+                padding: 20px;
+                color: $green;
+            }
+        }
+        .table-data {
+            background-color: $grey;
+            border-radius: 20px;
+            td {
+                padding: 20px;
+                font-size: 16px;
+            }
+        }
+    }
+}

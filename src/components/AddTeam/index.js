@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import './modal.scss'
+import ReactModal from 'react-modal';
+
+import './AddTeam.scss'
 import Player1 from '../../assets/Forfatter.png'
 import Player2 from '../../assets/emil.jpg'
 import Player3 from '../../assets/Kenneth.png'
@@ -8,13 +10,20 @@ import Player4 from '../../assets/Nikolai.png'
 var teamOnePoints = 0;
 var teamTwoPoints = 0;
 
-const Modal = ({handleClose, show, children }) => {
-const showHideClassName = show ? 'modal display-block' : 'modal display-none';
+const AddTeam = ({handleClose, show, children }) => {
+    if (show != true)
+        return null
+
     return (
-        <div id='greyOverlay' className={showHideClassName}>
-            <div id='background'>
+        <ReactModal 
+            isOpen={show} 
+            onRequestClose={handleClose} 
+            className={'greyOverlay'}
+            contentElement={(props, children) => <div {...props} onClick={handleClose}>{children}</div>}
+            >
+            <div id='background' onClick={e => e.stopPropagation()}>
                 <h3 id='title'>New Match</h3>
-                <div className='pointGrid'>
+                <div class='pointGrid'>
                     <div>
                         <div id='teamOnePoints'><p>{teamOnePoints}</p></div>
                     </div>
@@ -22,7 +31,7 @@ const showHideClassName = show ? 'modal display-block' : 'modal display-none';
                         <div id='teamTwoPoints'><p>{teamTwoPoints}</p></div>
                     </div>
                 </div>
-                <div className="selectTeamGrid">
+                <div class="selectTeamGrid">
                     <div>
                         <img src={Player1}></img>
                         <img src={Player2}></img>
@@ -35,8 +44,8 @@ const showHideClassName = show ? 'modal display-block' : 'modal display-none';
                         <button>Manage team &gt;</button>
                     </div>
                 </div>
-                <div id='teamsHolder' className='teamsGrid'>
-                    <div id='teamOne' className='playerGrid'>
+                <div id='teamsHolder' class='teamsGrid'>
+                    <div id='teamOne' class='playerGrid'>
                         <span width='50px'></span>
                         <h4>GF</h4>
                         <h4>GA</h4>
@@ -47,7 +56,7 @@ const showHideClassName = show ? 'modal display-block' : 'modal display-none';
                         <div><input id='player2GF' type='number' maxlength='2' placeholder='0'/></div>
                         <div><input id='player2GA' type='number' maxlength='2' placeholder='0'/></div>
                     </div>
-                    <div id='teamTwo'className='playerGrid'>
+                    <div id='teamTwo'class='playerGrid'>
                         <h4>GF</h4>
                         <h4>GA</h4>
                         <span width='50px'></span>
@@ -59,13 +68,14 @@ const showHideClassName = show ? 'modal display-block' : 'modal display-none';
                         <img src={Player4}></img>
                     </div>
                 </div>
-                <div className='buttonHolder'>
+                <div class='buttonHolder'>
                     <button>Add</button>
                 </div>
             </div>
-        </div>
+        </ReactModal>
     );
 };
+
 function enforce_maxlength(event) {
     var t = event.target;
     if (t.hasAttribute('maxlength')) {
@@ -90,4 +100,4 @@ function sendMatch(){
 
 }
 
-export default Modal
+export default AddTeam

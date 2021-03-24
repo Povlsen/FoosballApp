@@ -2,17 +2,20 @@
 
 $shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 
-#greyOverlay {
-    background-color: rgba($grey, 0.9);
+.greyOverlay {
+    position: absolute;
+    background-color: #000D;
     height: 100%;
+    width: 100%;
     margin: 0%;
     display: flex;
     justify-content: center;
     align-items: center;
+
     #background {
         background-color: $black;
         width: 90%;
-        height: 50%;
+        height: 60%;
         border-radius: 5%;
         h3{
             text-align: center;
@@ -163,4 +166,9 @@ $shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(
             }
         }
     }
+}
+
+.greyOverlay:focus{
+    outline-width: 0px;
+    outline-color: transparent;
 }

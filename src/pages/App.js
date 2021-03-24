@@ -1,33 +1,9 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { getScoreBoard } from '../actions/Scoreboard'
-
+import TableView from '../components/TableView'
 import TopView from '../components/TopView'
 import '../styling/App.scss'
-
-/*const leaderboard = [
-    {
-        "displayName" : "Emil",
-        "wins" : 17,
-        "percentage" : 64,
-        "losses" : 54,
-        "total" : 78
-    },
-    {
-        "displayName" : "Ulrik",
-        "wins" : 19,
-        "percentage" : 65,
-        "losses" : 54,
-        "total" : 78
-    },
-    {
-        "displayName" : "Kenned",
-        "wins" : 15,
-        "percentage" : 66,
-        "losses" : 54,
-        "total" : 78
-    }
-]*/
 
 const App = ({ leaderboard, getScoreBoard }) => {
     useEffect(_ => {
@@ -35,10 +11,13 @@ const App = ({ leaderboard, getScoreBoard }) => {
     }, [])
 
     return (
-        <TopView 
-            headline='Leaderboard'
-            users={leaderboard}
-        />
+        <>
+            <TopView 
+                headline='Leaderboard'
+                users={leaderboard}
+            />
+            <TableView />
+        </>
     )
 }
 

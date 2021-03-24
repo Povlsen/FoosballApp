@@ -1,24 +1,29 @@
 import React from 'react'
 import './TableView.scss'
+import Forfatter from '../../assets/Forfatter.png'
 
 const TableView = props => (
     <div class='table-view'>
-        <tabel class='table'>
-            <tr class='table-heading'>
-                <th>Player</th>
-                <th>Wins</th>
-                <th>Losses</th>
-                <th>Total</th>
-                <th>Win-rate</th>
-            </tr>
-            <tr class='table-data'>
-                <td>{props.users[0].displayName}</td>
-                <td>{props.users[0].wins}</td>
-                <td>{props.users[0].losses}</td>
-                <td>{props.users[0].total}</td>
-                <td>{props.users[0].percentage}</td>
-            </tr>
-        </tabel>
+        <div class='table-heading'>
+            <p></p>
+            <p class='heading-1'>Player</p>
+            <p></p>
+            <p>Wins</p>
+            <p>Loss</p>
+            <p>Total</p>
+            <p>Rate</p>
+        </div>
+        <div class='table-data'>
+            <div class='table-item'>
+                <div class='item-number'>4</div>
+                <img src={Forfatter} />
+                <p class='item-name'>LangNavn</p>
+                <p class='item-wins'>11</p>
+                <p class='item-losses'>12</p>
+                <p class='item-total'>23</p>
+                <p class='item-percentage'>47%</p>
+            </div>
+        </div>
     </div>
 )
 

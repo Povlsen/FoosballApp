@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import plus from '../../assets/plus.svg'
 
-import AddTeam from '../AddTeam'
+import AddTeam from '../AddMatch'
 import './AddButton.scss'
 
 const AddButton = _ => {

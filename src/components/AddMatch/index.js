@@ -9,16 +9,9 @@ import TeamSelect from './TeamSelect'
 import TeamStats from './TeamStats'
 import './AddMatch.scss'
 
-import Player1 from '../../assets/Forfatter.png'
-import Player2 from '../../assets/emil.jpg'
-import Player3 from '../../assets/Kenneth.png'
-import Player4 from '../../assets/Nikolai.png'
-
-import AddUser from '../AddUser'
-
 const AddMatch = ({ handleClose, show, getPlayers, addNewMatch }) => {
-    const [teamOne, setTeamOne] = useState([{ playerId: 1 }, { playerId: 2 }])
-    const [teamTwo, setTeamTwo] = useState([{ playerId: 3 }, { playerId: 4 }])
+    const [teamOne, setTeamOne] = useState([])
+    const [teamTwo, setTeamTwo] = useState([])
     const [teamOnePoints, setTeamOnePoints] = useState(0)
     const [teamTwoPoints, setTeamTwoPoints] = useState(0)
 
@@ -47,10 +40,7 @@ const AddMatch = ({ handleClose, show, getPlayers, addNewMatch }) => {
         addNewMatch({
             winnerStats: teamOnePoints > teamTwoPoints ? teamOne : teamTwo,
             looserStats: teamOnePoints < teamTwoPoints ? teamOne : teamTwo
-        }).then(_ => {
-            handleClose()
-            console.log('yes!')
-        })
+        }).then(_ => handleClose())
     }
 
     return (

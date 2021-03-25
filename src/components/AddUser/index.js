@@ -1,22 +1,24 @@
-import React, { Component,useEffect, useState } from 'react'
-import { useForm } from "react-hook-form"
-import ReactModal from 'react-modal'
-import './AddUser.scss'
-import { postPlayer } from '../../actions/Players'
+import React, { Component, useEffect, useState } from 'react'
+import { connect } from 'react-redux'
+import { useForm } from 'react-hook-form'
 
-export default function AddUser() {
-    const [showAddTeamModal, setShowAddTeamModal] = useState(false);
-    const { register, handleSubmit, errors } = useForm();
-    const onSubmit = data => {
-        console.log(data);
-        postPlayer(data);
+import ReactModal from 'react-modal'
+
+import { postPlayer } from '../../actions/Players'
+import './AddUser.scss'
+
+const AddUser = ({ postPlayer }) => {
+    const [showAddTeamModal, setShowAddTeamModal] = useState(false)
+    const { register, handleSubmit, errors } = useForm()
+    const onSubmit = data => {        
+        postPlayer(data).then(_ => setShowAddTeamModal(false))
     }
 
     return( 
         <>
             <button onClick={_ => setShowAddTeamModal(true)}>Add user</button>
         
-            <ReactModal 
+            <ReactModal
                 className={'Overlay'} 
                 isOpen={showAddTeamModal} 
                 onRequestClose={_ => setShowAddTeamModal(false)}
@@ -40,3 +42,10 @@ export default function AddUser() {
         </>
     )
 }
+
+
+
+
+export default connect(null, {
+    postPlayer,
+})(AddUser)

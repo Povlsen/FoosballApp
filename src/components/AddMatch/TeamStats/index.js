@@ -7,8 +7,6 @@ const TeamStats = ({ teamStats, onChange, imgLeft, imgRight }) => {
     if (imgLeft) extraClass += ' img-left'
     if (imgRight) extraClass += ' img-right'
 
-    console.log('teamStats', teamStats)
-
     const updated = stats => {
         onChange([
             ...teamStats.filter(x => x.playerId !== stats.playerId), 

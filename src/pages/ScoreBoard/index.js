@@ -14,11 +14,11 @@ const ScoreBoard = ({ leaderboard, getScoreBoard }) => {
     return (
         <>
             <TopView 
-                headline='Leaderboard'
-                users={leaderboard}
+                headline='Leadboard'
+                players={leaderboard}
             />
             <TableView
-                users={leaderboard}
+                players={leaderboard}
             />
             <AddButton />
         </>

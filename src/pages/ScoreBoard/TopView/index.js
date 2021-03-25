@@ -2,8 +2,8 @@ import React from 'react'
 import './TopView.scss'
 import Emil from '../../../assets/emil.jpg'
 
-const TopView = ({ headline, users }) => {
-    if (!(Array.isArray(users) && users.length >= 3)) return null
+const TopView = ({ headline, players }) => {
+    if (!(Array.isArray(players) && players.length >= 3)) return null
 
     return (
         <div class='view'>
@@ -17,11 +17,11 @@ const TopView = ({ headline, users }) => {
                             </div>
                             <img class='pic' src={Emil}/>
                         </div>
-                        <p class='name-lable'>{users[1].displayName}</p>
+                        <p class='name-lable'>{players[1].displayName}</p>
                     </div>
                     <div class='podium-item-1'>
-                        <p class='wins-lable'>{users[1].wins} wins</p>
-                        <p class='percentages-lable'>{users[1].winRatio} %</p>
+                        <p class='wins-lable'>{players[1].wins} wins</p>
+                        <p class='percentages-lable'>{players[1].winRatio} %</p>
                     </div>
                 </div>
                 <div class='podium-item'>
@@ -32,11 +32,11 @@ const TopView = ({ headline, users }) => {
                             </div>
                             <img class='pic' src={Emil}/>
                         </div>
-                        <p class='name-lable'>{users[0].displayName}</p>
+                        <p class='name-lable'>{players[0].displayName}</p>
                     </div>
                     <div class='podium-item-2'>
-                        <p class='wins-lable'>{users[0].wins} wins</p>
-                        <p class='percentages-lable'>{users[0].winRatio} %</p>
+                        <p class='wins-lable'>{players[0].wins} wins</p>
+                        <p class='percentages-lable'>{players[0].winRatio} %</p>
                     </div>
                 </div>
                 <div class='podium-item'>
@@ -47,11 +47,11 @@ const TopView = ({ headline, users }) => {
                             </div>
                             <img class='pic' src={Emil}/>
                         </div>
-                        <p class='name-lable'>{users[2].displayName}</p>
+                        <p class='name-lable'>{players[2].displayName}</p>
                     </div>
                     <div class='podium-item-3'>
-                        <p class='wins-lable'>{users[2].wins} wins</p>
-                        <p class='percentages-lable'>{users[2].winRatio} %</p>
+                        <p class='wins-lable'>{players[2].wins} wins</p>
+                        <p class='percentages-lable'>{players[2].winRatio} %</p>
                     </div>
                 </div>
             </div>            

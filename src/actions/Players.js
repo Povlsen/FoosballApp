@@ -21,7 +21,9 @@ export const getPlayerScoreDetails = playerId => {
 }
 
 export const postPlayer = data => {
+    console.log('player/put', `{"firstName": '${data.firstname}', "lastName": '${data.lastname}', "displayName": '${data.displayname}'}`)
     return dispatch => {
-        return axios.post('player/post', data)
+        var res = axios.put('player/put', `{"firstName": '${data.firstname}', "lastName": '${data.lastname}', "displayName": '${data.displayname}'}`);
+        return res;
     }
 }

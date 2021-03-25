@@ -4,7 +4,6 @@
     input, button, button:hover, button:visited, button:active  { border:none; outline:none;} 
 
     button {
-        background-image: $primary-blue-gradient;
         width: 80px;
         height: 80px;
         border: nome;
@@ -13,13 +12,16 @@
         right: 20px;
         bottom: 20px;
         color: $white;
-
+        
         img {
             height: 40px;
         }
-    }
-
-    .revert{
-        background-image: $primary-red-gradient;
+        
+        &.red{
+            background-image: $primary-red-gradient;
+        }
+        &.blue{
+            background-image: $primary-blue-gradient;
+        }
     }
 }

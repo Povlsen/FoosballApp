@@ -1,6 +1,6 @@
 import React from 'react'
 import './TopView.scss'
-import Emil from '../../assets/emil.jpg'
+import Emil from '../../../assets/emil.jpg'
 
 const TopView = ({ headline, users }) => {
     if (!(Array.isArray(users) && users.length >= 3)) return null

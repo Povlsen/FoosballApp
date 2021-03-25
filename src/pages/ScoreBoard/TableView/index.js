@@ -1,6 +1,6 @@
 import React from 'react'
 import './TableView.scss'
-import Forfatter from '../../assets/Forfatter.png'
+import Forfatter from '../../../assets/Forfatter.png'
 
 const TableView = ({ users }) => (
     <div class='table-view2'>

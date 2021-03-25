@@ -2,8 +2,8 @@ import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { getScoreBoard } from '../../actions/Scoreboard'
 import AddButton from '../../components/AddButton'
-import TableView from '../../components/TableView'
-import TopView from '../../components/TopView'
+import TableView from './TableView'
+import TopView from './TopView'
 import './ScoreBoard.scss'
 
 const ScoreBoard = ({ leaderboard, getScoreBoard }) => {

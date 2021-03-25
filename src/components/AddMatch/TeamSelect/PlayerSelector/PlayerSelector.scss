@@ -1,8 +1,9 @@
-@import '../../../styling/theme.scss';
+@import '../../../../styling/theme.scss';
 
 .manage-team-lable {
     text-align: center;
-    grid-column: 1 3;
+    padding-bottom: 5px;
+    border-bottom: 1px solid $white;
 }
 
 .Overlay {
@@ -31,6 +32,11 @@
             width: 100%;
             border-bottom: 1px solid $black;
             text-align: left;
+
+            &.selected {
+                background-color: rgba($blue, 0.1);
+                border-left: 2px solid $blue;
+            }
 
             img {
                 margin: 5px;
@@ -73,10 +79,6 @@
             }
         }
     }
-}
-
-.is-invisible {
-    //display: none !important;
 }
 
 

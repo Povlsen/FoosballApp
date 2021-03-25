@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import ReactModal from 'react-modal';
 
+<<<<<<< HEAD
 import './AddMatch.scss'
+=======
+import './AddTeam.scss'
+>>>>>>> 2acb018f298b22990106ada6406cc469f8aafd38
 import Player1 from '../../assets/Forfatter.png'
 import Player2 from '../../assets/emil.jpg'
 import Player3 from '../../assets/Kenneth.png'

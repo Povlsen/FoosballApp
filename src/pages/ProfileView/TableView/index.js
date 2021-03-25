@@ -2,7 +2,7 @@ import React from 'react'
 import './TableView.scss'
 import Forfatter from '../../../assets/Forfatter.png'
 
-const TableView = ({ headline, users }) => {
+const TableView = ({ matches, playersProfilePictures }) => {
     return (
         <div class='table-view'>
             <div class='table-heading'>
@@ -32,7 +32,7 @@ const TableView = ({ headline, users }) => {
                     </a>
                 </div>
             }
-    </div>
+        </div>
     )
 }
 

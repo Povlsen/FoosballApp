@@ -9,7 +9,7 @@ import './ScoreBoard.scss'
 const ScoreBoard = ({ leaderboard, getScoreBoard }) => {
     useEffect(_ => {
         getScoreBoard()
-    }, [])
+    }, [getScoreBoard])
 
     return (
         <>

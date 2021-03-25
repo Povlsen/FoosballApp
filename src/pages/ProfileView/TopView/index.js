@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './TopView.scss'
 import Emil from '../../../assets/emil.jpg'
-import ls from 'local-storage'
+import TopViewElement from '../../../Elements/TopViewElement'
 
 const TopView = ({ scoreDetails }) => {
     let {
@@ -28,15 +28,8 @@ const TopView = ({ scoreDetails }) => {
         </div>
     )   
 
-    const initialView = () => window.localStorage.getItem('view')
-    const [view, setView] = useState(initialView)
-    useEffect(_ => {
-        window.localStorage.setItem('view', view)
-    }, [view])
-
     return( 
-        <div class={view} onClick={_ => setView(view == 'view' ? 'view revert' : 'view')}>
-            <p class='heading'>{displayName || ''} - Details</p>
+        <TopViewElement headline={displayName}>
             <div class='pic-holder'>
                 <div class='place-lable'>
                     <p class='place-lable-text'>{rank}</p>
@@ -50,7 +43,7 @@ const TopView = ({ scoreDetails }) => {
                 {statItem(`${goalsFrom} GF`, goalsFromRank)}
                 {statItem(`${goalsAgainst} GA`, goalsAgainstRank)}
             </div>
-        </div>
+        </TopViewElement>
     )
 }
 export default TopView

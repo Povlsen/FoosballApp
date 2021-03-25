@@ -1,6 +1,18 @@
 @import '../../../styling/theme.scss';
 
 .profile-top-view {
+    .back-btn {
+        position: absolute;
+        top: 20px;
+        left: 10px;
+        background-color: transparent;
+        border:none;
+
+        img {
+            width: 25px;
+            height: 25px;
+        }
+    }
     .pic-holder {
         display: inline-block;
         text-align: center;

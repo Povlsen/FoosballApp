@@ -21,7 +21,7 @@ const TopView = ({ headline, players }) => {
                     </div>
                     <div class='podium-item-1'>
                         <p class='wins-lable'>{players[1].wins} wins</p>
-                        <p class='percentages-lable'>{players[1].winRatio} %</p>
+                        <p class='percentages-lable'>{players[1].winRatio}%</p>
                     </div>
                 </div>
                 <div class='podium-item'>
@@ -36,7 +36,7 @@ const TopView = ({ headline, players }) => {
                     </div>
                     <div class='podium-item-2'>
                         <p class='wins-lable'>{players[0].wins} wins</p>
-                        <p class='percentages-lable'>{players[0].winRatio} %</p>
+                        <p class='percentages-lable'>{players[0].winRatio}%</p>
                     </div>
                 </div>
                 <div class='podium-item'>
@@ -51,7 +51,7 @@ const TopView = ({ headline, players }) => {
                     </div>
                     <div class='podium-item-3'>
                         <p class='wins-lable'>{players[2].wins} wins</p>
-                        <p class='percentages-lable'>{players[2].winRatio} %</p>
+                        <p class='percentages-lable'>{players[2].winRatio}%</p>
                     </div>
                 </div>
             </div>            

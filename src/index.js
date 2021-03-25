@@ -10,7 +10,7 @@ import './styling/index.scss'
 
 import ScoreBoard from './pages/ScoreBoard'
 import ProfileView from './pages/ProfileView'
-import NotFound from './pages/notfound'
+import NotFound from './pages/Notfound'
 
 axios.defaults.baseURL = process.env.REACT_APP_API_URL
 

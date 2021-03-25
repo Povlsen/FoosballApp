@@ -1,12 +1,34 @@
 import React, { Component } from 'react'
-//import Dropdown from 'react-dropdown';
-//import 'react-dropdown/style.css';
+import Kenneth from '../../../assets/Kenneth.png'
 import './PlayerSelector.scss'
 
 class Selector extends Component {
     render() {
         return(
-            <p>test</p>
+            <div class='team-overlay is-unvisible' >
+                <div class='team-list'>
+                    <div class='list-item'>
+                        <img src={Kenneth} />
+                        <p>Rema</p>
+                        
+                    </div>
+                    <div class='list-item'>
+                        <img src={Kenneth} />
+                        <p>Rema</p>
+                        
+                    </div>
+                    <div class='list-item'>
+                        <img src={Kenneth} />
+                        <p>Rema</p>
+                        
+                    </div>
+                    <div class='list-item'>
+                        <img src={Kenneth} />
+                        <p>Rema</p>
+                        
+                    </div>
+                </div>
+            </div>
         )
     }
    

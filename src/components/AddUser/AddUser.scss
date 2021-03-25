@@ -1,8 +1,47 @@
 @import '../../styling/theme.scss';
 
-.modal-view {
-    width: 80%;
-    height: 80%;
-
+.modal-view{
+    border-radius: 20px;
     background-color: $black;
+    text-align: center;
+
+    .close-btn {
+        float: right;
+        margin-top: 15px;
+        margin-right: 15px;
+        color: $red;
+    }
+
+    .user-form {
+        display: grid !important;
+        position: relative;
+        margin: 30px;
+        text-align: left;
+        display: block;
+        
+        p {
+            margin: 0px;
+            margin-bottom: 5px;
+        }
+
+        .input {
+            position: relative;
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+            background-color: $grey;
+            color: $white;
+            margin-bottom: 10px;
+            width: 170px;
+        }
+
+        .form-submit {
+            position: relative;
+            padding: 10px;
+            border: none;
+            border-radius: 20px;
+            background-image: linear-gradient(150deg, $blue 0%, $green 100%);
+            color: $white;
+        }
+    }
 }

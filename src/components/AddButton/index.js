@@ -8,7 +8,7 @@ import AddTeam from '../AddMatch'
 import './AddButton.scss'
 
 const AddButton = themeColor => {
-    const [showAddTeamModal, setShowAddTeamModal] = useState(true)
+    const [showAddTeamModal, setShowAddTeamModal] = useState(false)
     useEffect(_ => {
     }, [themeColor])
 

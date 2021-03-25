@@ -2,7 +2,7 @@ import React from 'react'
 import './TableView.scss'
 import Forfatter from '../../assets/Forfatter.png'
 
-const TableView = props => (
+const TableView = ({ users }) => (
     <div class='table-view'>
         <div class='table-heading'>
             <p></p>
@@ -15,7 +15,7 @@ const TableView = props => (
         </div>
         
         {
-            props.users.map((user,index) => (
+            users.map((user,index) => (
                 <div class='table-data'>
                     <a class='table-item'>
                         <div class='item-number'>{index + 1}</div>

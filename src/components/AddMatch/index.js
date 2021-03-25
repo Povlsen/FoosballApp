@@ -9,6 +9,7 @@ import Player3 from '../../assets/Kenneth.png'
 import Player4 from '../../assets/Nikolai.png'
 
 import Team from './Team';
+import Selector from './PlayerSelector'
 
 var teamOnePoints = 0;
 var teamTwoPoints = 0;
@@ -41,12 +42,14 @@ const AddTeam = ({handleClose, show, children }) => {
                         <img src={Player1}></img>
                         <img src={Player2}></img>
                         <button>Manage team &gt;</button>
+                        <Selector></Selector>
                     </div>
                     <h4>Vs.</h4>
                     <div>
                         <img src={Player3}></img>
                         <img src={Player4}></img>
                         <button>Manage team &gt;</button>
+                        <Selector></Selector>
                     </div>
                 </div>
                 <div id='teamsHolder' class='teamsGrid'>

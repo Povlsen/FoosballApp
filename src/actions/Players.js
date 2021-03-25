@@ -23,6 +23,6 @@ export const getPlayerScoreDetails = playerId => {
 export const postPlayer = data => {
     console.log('player/put', `{"playerId": 0, "firstName": '${data.firstname}', "lastName": '${data.lastname}', "displayName": '${data.displayname}', "profilePicture": "string"}`)
     return dispatch => {
-        return axios.put('player/put', `{"playerId": 0, "firstName": "${data.firstname}", "lastName": "${data.lastname}", "displayName": "${data.displayname}"}`);
+        return axios.put('player', data);
     }
 }

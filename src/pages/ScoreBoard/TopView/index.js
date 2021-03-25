@@ -8,7 +8,7 @@ const TopView = ({ headline, players }) => {
 
     return (
         <TopViewElement headline={headline}>
-            <div class='podium'>
+            <div class='score-board-top-view podium'>
                 <div class='podium-item'>
                     <div class='podium-item-1-top'>
                         <div class='pic-holder'>

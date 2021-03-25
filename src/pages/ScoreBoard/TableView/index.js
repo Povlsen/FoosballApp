@@ -4,7 +4,7 @@ import './TableView.scss'
 import Forfatter from '../../../assets/Forfatter.png'
 
 const TableView = ({ players }) => (
-    <div class='table-view2'>
+    <div class='score-board-table-view'>
         <div class='table-heading'>
             <p></p>
             <p class='heading-1'>Player</p>

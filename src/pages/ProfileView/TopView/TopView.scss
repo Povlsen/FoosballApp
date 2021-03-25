@@ -1,21 +1,6 @@
 @import '../../../styling/theme.scss';
 
-.view {
-    background-color: $blue;
-    background-image: $primary-blue-gradient;
-    width: 100%;
-    margin: 0;
-    margin-top: -20px;
-    border-radius: 0% 0% 20px 20px;
-    text-align: center;
-
-    .heading {
-        color: $white;
-        text-align: center;
-        padding-top: 20px;
-        font-size: 20px;
-    }
-
+.profile-top-view {
     .pic-holder {
         display: inline-block;
         text-align: center;

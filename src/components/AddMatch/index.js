@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import ReactModal from 'react-modal'
-
+import { connect } from 'react-redux'
 import { getPlayers } from '../../actions/Players'
 import './AddMatch.scss'
-
 import Player1 from '../../assets/Forfatter.png'
 import Player2 from '../../assets/emil.jpg'
 import Player3 from '../../assets/Kenneth.png'
@@ -23,6 +22,7 @@ const AddTeam = ({ handleClose, show, getPlayers }) => {
         getPlayers()
     }, [getPlayers])
 
+const AddMatch = ({handleClose, show, children }) => {
     useEffect(_ => {
         const getSum = list => list.reduce((val, item) => val + (isNaN(item.goalsFrom) ? 0 : item.goalsFrom), 0)
         setTeamOnePoints(getSum(teamOne))
@@ -98,7 +98,6 @@ const AddTeam = ({ handleClose, show, getPlayers }) => {
                 </div>
             </div>
         </ReactModal>
-    )
 }
 
 const mapStateToProps = ({ players }) => ({
@@ -107,4 +106,4 @@ const mapStateToProps = ({ players }) => ({
 
 export default connect(mapStateToProps, {
     getPlayers
-})(AddTeam)
+})(AddMatch)

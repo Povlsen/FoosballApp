@@ -2,7 +2,7 @@
 
 .view {
     background-color: $blue;
-    background-image: linear-gradient(150deg, $blue 0%, $green 100%);
+    background-image: $primary-blue-gradient;
     width: 100%;
     margin: 0;
     margin-top: -20px;
@@ -90,6 +90,6 @@
 
 .revert {
     background-color: $red;
-    background-image: linear-gradient(150deg, $red 0%, $grey 100%);
+    background-image: $primary-red-gradient;
 }
 

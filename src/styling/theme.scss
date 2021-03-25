@@ -5,5 +5,8 @@ $green: #80D0C7;
 $red: #FC5185;
 $white: #F0F0F0;
 
-
 $large-font: 400%;
+$primary-red-gradient: linear-gradient(150deg, $red 0%, $grey 100%);
+$secondary-red-gradient: linear-gradient(150deg, $grey 0%, $red 100%);
+$primary-blue-gradient: linear-gradient(150deg, $blue 0%, $green 100%);
+$secondary-blue-gradient: linear-gradient(150deg, $green 0%, $blue 100%);

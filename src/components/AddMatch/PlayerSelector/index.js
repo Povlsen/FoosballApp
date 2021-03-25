@@ -1,110 +1,47 @@
-import React, { Component } from 'react'
+import React, { Component, useState } from 'react'
 import Kenneth from '../../../assets/Kenneth.png'
 import './PlayerSelector.scss'
+import { connect } from 'react-redux'
+import ReactModal from 'react-modal'
 
-class Selector extends Component {
-    render() {
-        return(
-            <div class='team-overlay is-unvisible' >
-                <div class='team-list'>
-                    <div class='list-item'>
-                        <img src={Kenneth} />
-                        <p>Rema</p>
+const Selector = ({players}) => {
+    const [showAddTeamModal, setShowAddTeamModal] = useState(false)
+        
+    return( 
+        <>
+        {console.log(showAddTeamModal)}
+            <a class='manage-team-lable' onClick={_ => setShowAddTeamModal(true)}>Manage Team</a>
+        
+            <ReactModal className={'Overlay'} isOpen={showAddTeamModal} onRequestClose={_ => setShowAddTeamModal(false)}
+            >
+                <div class='team-overlay is-invisible' >
+                    <div class='team-list'>
+                        <div class='list-item' onclcik=''>
+                            <div class='close-btn' onClick={_ => setShowAddTeamModal(false)}>Close</div>
+                        </div>
+                        {
+                            players?.map((player) => (
+                                <div class='list-item' onclcik=''>
+                                    <img src={player.image ?? Kenneth} />
+                                    <p>{player.displayName}</p>
+                                </div>
+                            ))
+                        }
                         
-                    </div>
-                    <div class='list-item'>
-                        <img src={Kenneth} />
-                        <p>Rema</p>
-                        
-                    </div>
-                    <div class='list-item'>
-                        <img src={Kenneth} />
-                        <p>Rema</p>
-                        
-                    </div>
-                    <div class='list-item'>
-                        <img src={Kenneth} />
-                        <p>Rema</p>
+                        <div class='list-item button-holder' onclcik=''>
+                            <button>Add new player</button>
+                        </div>
                         
                     </div>
                 </div>
-            </div>
-        )
-    }
-   
-
-
-
-
-    /*state = {
-        activeMenu: 'min',
-        open: true,
-        player1: '',
-        player2: ''
-    };
-    
-    toggleMenu = e => {
-        this.setState({
-            activeMenu: e.target.name
-        });
-    };
-    
-    toggleOpen = () => {
-        this.setState( prevState => {
-            return { open: !prevState.open }
-        });
-    };
-    
-    getMenuOptions = () => {
-        let options = []
-        switch(this.state.activeMenu){
-            case 'Player1': {
-                options = ['Nikolai','Emil','Kenneth','Forfatter'];
-            break
-        }
-        case 'Player2': {
-            options = ['Nikolai','Emil','Kenneth','Forfatter'];
-            break
-        }
-    }
-    return options.map( (option, i) => {
-        return (
-            <li key={i} onClick={this.handleSelect.bind(this, this.state.activeMenu, option)}>
-            {option}
-            </li>
-        )
-    });
-};
-    
-    handleSelect = (menu, value) => {
-        this.setState({
-            [menu]: value
-        });
-    };
-    render() {
-        const { open, player1, player2, activeMenu } = this.state;
-        const menuOptions = this.getMenuOptions();
-        return(
-            <div className="select">
-            <span onClick={this.toggleOpen} >Rent Range</span>
-            {open && (
-            <div>
-                <div>
-                    <input type="text" name="player1" value={player1} onFocus={this.toggleMenu} autoFocus />
-                    -
-                    <input type="text" name="player2" value={player2} onFocus={this.toggleMenu} />
-                </div>
-                <div>
-                    <ul className={activeMenu}>
-                        {menuOptions}
-                    </ul>
-                </div>
-            </div>
-        )}
-        </div>
+            </ReactModal>
+        </>
     )
-    }*/
-
 }
 
-export default Selector
+const mapStateToProps = ({ players }) => ({
+    players: players.list
+})
+
+export default connect(mapStateToProps, {
+})(Selector)

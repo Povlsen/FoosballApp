@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactModal from 'react-modal';
-
+import { connect } from 'react-redux'
+import { getPlayers } from '../../actions/Players'
 import './AddMatch.scss'
-
 import Player1 from '../../assets/Forfatter.png'
 import Player2 from '../../assets/emil.jpg'
 import Player3 from '../../assets/Kenneth.png'
@@ -16,7 +16,11 @@ var teamTwoPoints = 0;
 
 var selectedUsers = [51,52,321,46];
 
-const AddTeam = ({handleClose, show, children }) => {
+const AddMatch = ({handleClose, show, children, getPlayers }) => {
+    useEffect(_ => {
+        getPlayers()
+    }, [getPlayers])
+
     if (show != true)
         return null;
 
@@ -41,7 +45,9 @@ const AddTeam = ({handleClose, show, children }) => {
                     <div class='grid-view'>
                         <img class='player-img' src={Player1}></img>
                         <img class='player-img' src={Player2}></img>
-                        <Selector></Selector>
+                        <Selector 
+                            players = {getPlayers}
+                        />
                     </div>
                     <h4>Vs.</h4>
                     <div class='grid-view'>
@@ -79,56 +85,6 @@ const AddTeam = ({handleClose, show, children }) => {
             </div>
         </ReactModal>
     );
-    /*return (
-        <ReactModal 
-            isOpen={show} 
-            onRequestClose={handleClose} 
-            className={'greyOverlay'}
-            contentElement={(props, children) => <div {...props} onClick={handleClose}>{children}</div>}
-            >
-            <div id='background' onClick={e => e.stopPropagation()}>
-                <h3 id='title'>New Match</h3>
-                <div class='pointGrid'>
-                    <div>
-                        <div id='teamOnePoints'><p>{teamOnePoints}</p></div>
-                    </div>
-                    <div>
-                        <div id='teamTwoPoints'><p>{teamTwoPoints}</p></div>
-                    </div>
-                </div>
-                <div class="selectTeamGrid">
-                    <div>
-                        <img src={Player1}></img>
-                        <img src={Player2}></img>
-                        <button>Manage team &gt;</button>
-                    </div>
-                    <h4>Vs.</h4>
-                    <div>
-                        <img src={Player3}></img>
-                        <img src={Player4}></img>
-                        <button>Manage team &gt;</button>
-                    </div>
-                </div>
-                <div id='teamsHolder'>
-                    <div id='teamOne' class="teamsGrid">
-                        <span width='50px'></span>
-                        <h4>GF</h4>
-                        <h4>GA</h4>
-                        <Team id='TeamOne' player1ImgSrc={Player1} player2ImgSrc={Player2}/>
-                    </div>
-                    <div id='teamTwo' class="teamsGrid">
-                        <h4>GF</h4>
-                        <h4>GA</h4>
-                        <span width='50px'></span>
-                        <Team id='TeamTwo' player1ImgSrc={Player3} player2ImgSrc={Player4}/>
-                    </div>
-                </div>
-                <div class='buttonHolder'>
-                    <button onClick={sendMatch}>Add</button>
-                </div>
-            </div>
-        </ReactModal>
-    );*/
 };
 
 function enforce_maxlength(event) {
@@ -164,4 +120,10 @@ function sendMatch(){
     console.log(players)
 }
 
-export default AddTeam
+const mapStateToProps = ({ players }) => ({
+    players: players.list
+})
+
+export default connect(mapStateToProps, {
+    getPlayers
+})(AddMatch)

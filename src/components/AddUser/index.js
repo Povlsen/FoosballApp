@@ -26,13 +26,13 @@ export default function AddUser() {
                     <p>Add User</p>
                     <form class='user-form' onSubmit={handleSubmit(onSubmit)}>
                         <p class='lable'>Firstname:</p>
-                        <input name='firstname' type='text' class='input' ref={register}></input>
+                        <input name='firstName' type='text' class='input' ref={register}></input>
                         <p class='lable'>Lastname:</p>
-                        <input name='lastname' type='text' class='input' ref={register}></input>
+                        <input name='lastName' type='text' class='input' ref={register}></input>
                         <p class='lable'>Displayname:</p>
-                        <input name='displayname' type='text' class='input' ref={register}></input>
+                        <input name='displayName' type='text' class='input' ref={register}></input>
                         <p class='lable'>Image:</p>
-                        <input name='image' type='file' class='input'></input>
+                        <input name='profilePicture' type='file' class='input'></input>
                         <button class='form-submit' >Add user</button>
                     </form>
                 </div>

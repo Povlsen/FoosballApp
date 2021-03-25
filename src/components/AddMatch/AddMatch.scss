@@ -59,76 +59,15 @@ $shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(
             grid-template-columns: 45% 10% 45%;
             height: 30%;
             text-align: center;
-
-            .grid-view {
-                display: inline-grid;
-                justify-items: center;
-                align-items: center;
-                grid-template-columns: 50% 50%;
-                columns: 2;
-                .multiselect-container {
-                    grid-column: 1/3;
-                }
-                .player-img {
-                    height: 60px;
-                    padding: 10px;
-                    border-radius: 50%;
-                    align-self: center;
-                }
-                h4 {
-                    height: 110px;
-                } 
-            }
         }
+
         .teamsGrid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             column-gap: 30px;
             height: 28%;
-            .playerGrid {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                row-gap: 5px;
-                align-items: center;
-                justify-items: center;
-                text-align: center;
-                h4 {
-                    text-align: bottom;
-                    color: $green;
-                    height: 30px;
-                    margin: 0%;
-                }
-                div {
-                    box-shadow: $shadow;
-                    border-radius: 50%;
-                    background-color: $black;
-                    height: 40px;
-                    width: 40px;
-                    input {
-                        margin: 0%;
-                        padding: 0%;
-                        width: 40px;
-                        height: 40px;
-                        background: transparent;
-                        border-color: transparent;
-                        text-align: center;
-                        color: $white;
-                    }
-                    input:focus {
-                        outline-color: transparent;
-                        outline-width: 0px;
-                    }
-                    input:hover{
-                        border-radius: 50%;
-                        border-color: $red;
-                    }
-                }
-                img {
-                    border-radius: 50%;
-                    max-height: 40px;
-                }
-            }
         }
+
         .buttonHolder{
             text-align: center;
             width: 100%;

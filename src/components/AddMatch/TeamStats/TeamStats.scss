@@ -1,0 +1,45 @@
+@import '../../../styling/theme.scss';
+
+.team-stats {
+    display: grid;
+    row-gap: 5px;
+    >div {
+        display: grid;
+        grid-template-columns: [left] 1fr [middle] 1fr [right] 1fr;
+        align-items: center;
+        justify-items: center;
+        text-align: center;
+    }
+
+    h4 {
+        text-align: bottom;
+        color: $green;
+        height: 30px;
+        margin: 0%;
+    }
+
+    &.img-right {
+        .gf {
+            grid-column: left;
+        }
+        .ga {
+            grid-column: middle;
+        }
+        img {
+            grid-column: right;
+            grid-row: 1;
+        }
+    }
+    &.img-left {
+        img {
+            grid-column: left;
+            grid-row: 1;
+        }
+        .gf {
+            grid-column: middle;
+        }
+        .ga {
+            grid-column: right;
+        }
+    }
+}

@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
+import ReactModal from 'react-modal'
 
 import { getPlayers } from '../../actions/Players'
+import { addNewMatch } from '../../actions/Matches'
 
-import ReactModal from 'react-modal'
+import TeamSelect from './TeamSelect'
+import TeamStats from './TeamStats'
 import './AddMatch.scss'
 
 import Player1 from '../../assets/Forfatter.png'
@@ -11,13 +14,11 @@ import Player2 from '../../assets/emil.jpg'
 import Player3 from '../../assets/Kenneth.png'
 import Player4 from '../../assets/Nikolai.png'
 
-import Team from './Team';
-import TeamSelect from './TeamSelect'
 import AddUser from '../AddUser'
 
-const AddMatch = ({ handleClose, show, getPlayers }) => {
-    const [teamOne, setTeamOne] = useState([{},{},{},{}])
-    const [teamTwo, setTeamTwo] = useState([{},{}])
+const AddMatch = ({ handleClose, show, getPlayers, addNewMatch }) => {
+    const [teamOne, setTeamOne] = useState([{ playerId: 1 }, { playerId: 2 }])
+    const [teamTwo, setTeamTwo] = useState([{ playerId: 3 }, { playerId: 4 }])
     const [teamOnePoints, setTeamOnePoints] = useState(0)
     const [teamTwoPoints, setTeamTwoPoints] = useState(0)
 
@@ -39,12 +40,21 @@ const AddMatch = ({ handleClose, show, getPlayers }) => {
                     a.push({ playerId: x }), a
                 ), []) // New players
         ]
-        console.log('updateTeamMenbers', team)
         setTeam(team)
     }
 
+    const addMatch = _ => {
+        addNewMatch({
+            winnerStats: teamOnePoints > teamTwoPoints ? teamOne : teamTwo,
+            looserStats: teamOnePoints < teamTwoPoints ? teamOne : teamTwo
+        }).then(_ => {
+            handleClose()
+            console.log('yes!')
+        })
+    }
+
     return (
-        <ReactModal 
+        <ReactModal
             isOpen={show} 
             onRequestClose={handleClose} 
             className={'greyOverlay'}
@@ -71,32 +81,20 @@ const AddMatch = ({ handleClose, show, getPlayers }) => {
                         onChange={data => updateTeamMenbers(data, teamTwo, setTeamTwo)} 
                     />
                 </div>
-                <div id='teamsHolder' class='teamsGrid'>
-                    <div id='teamOne' class='playerGrid'>
-                        <span width='50px'></span>
-                        <h4>GF</h4>
-                        <h4>GA</h4>
-                        <img src={Player1}></img>
-                        <div><input id='player1GF' type='number' maxlength='2' placeholder='0'/></div>
-                        <div><input id='player1GA' type='number' maxlength='2' placeholder='0'/></div>
-                        <img src={Player2}></img>
-                        <div><input id='player2GF' type='number' maxlength='2' placeholder='0'/></div>
-                        <div><input id='player2GA' type='number' maxlength='2' placeholder='0'/></div>
-                    </div>
-                    <div id='teamTwo'class='playerGrid'>
-                        <h4>GF</h4>
-                        <h4>GA</h4>
-                        <span width='50px'></span>
-                        <div><input id='player3GF' type='number' maxlength='2' placeholder='0'/></div>
-                        <div><input id='player3GA' type='number' maxlength='2' placeholder='0'/></div>
-                        <img src={Player3}></img>
-                        <div><input id='player4GF' type='number' maxlength='2' placeholder='0'/></div>
-                        <div><input id='player4GA' type='number' maxlength='2' placeholder='0'/></div>
-                        <img src={Player4}></img>
-                    </div>
+                <div class='teamsGrid'>
+                    <TeamStats 
+                        imgLeft 
+                        teamStats={teamOne} 
+                        onChange={setTeamOne} 
+                    />
+                    <TeamStats 
+                        imgRight
+                        teamStats={teamTwo}
+                        onChange={setTeamTwo}
+                    />                    
                 </div>
                 <div class='buttonHolder'>
-                    <button onClick={_ => {}}>Add</button>
+                    <button onClick={addMatch}>Add</button>
                 </div>
             </div>
         </ReactModal>
@@ -108,5 +106,6 @@ const mapStateToProps = ({ players }) => ({
 })
 
 export default connect(mapStateToProps, {
-    getPlayers
+    getPlayers,
+    addNewMatch
 })(AddMatch)

@@ -11,11 +11,11 @@ import Player3 from '../../assets/Kenneth.png'
 import Player4 from '../../assets/Nikolai.png'
 
 import Team from './Team';
-import Selector from './PlayerSelector'
+import TeamSelect from './TeamSelect'
 
 const AddTeam = ({ handleClose, show, getPlayers }) => {
-    const [teamOne, setTeamOne] = useState([])
-    const [teamTwo, setTeamTwo] = useState([])
+    const [teamOne, setTeamOne] = useState([{},{},{},{}])
+    const [teamTwo, setTeamTwo] = useState([{},{}])
     const [teamOnePoints, setTeamOnePoints] = useState(0)
     const [teamTwoPoints, setTeamTwoPoints] = useState(0)
 
@@ -29,8 +29,17 @@ const AddTeam = ({ handleClose, show, getPlayers }) => {
         setTeamTwoPoints(getSum(teamTwo))
     }, [teamOne, teamTwo])
 
-    if (show != true)
-        return null
+    const updateTeamMenbers = (ids, currentTeam, setTeam) => {
+        let team = [
+            ...currentTeam.filter(x => ids.includes(x.playerId)), // Previous players
+            ...ids.reduce((a, x) => (
+                    !currentTeam.some(c => c.playerId === x) && 
+                    a.push({ playerId: x }), a
+                ), []) // New players
+        ]
+        console.log('updateTeamMenbers', team)
+        setTeam(team)
+    }
 
     return (
         <ReactModal 
@@ -50,16 +59,15 @@ const AddTeam = ({ handleClose, show, getPlayers }) => {
                     </div>
                 </div>
                 <div class='selectTeamGrid'>
-                    <div class='grid-view'>
-                        <img class='player-img' src={Player1}></img>
-                        <img class='player-img' src={Player2}></img>
-                        <Selector></Selector>
-                    </div>
+                    <TeamSelect 
+                        memberIds={teamOne.map(x => x.playerId)} 
+                        onChange={data => updateTeamMenbers(data, teamOne, setTeamOne)} 
+                    />
                     <h4>Vs.</h4>
-                    <div class='grid-view'>
-                        <img class='player-img' src={Player3}></img>
-                        <img class='player-img' src={Player4}></img>
-                    </div>
+                    <TeamSelect 
+                        memberIds={teamTwo.map(x => x.playerId)} 
+                        onChange={data => updateTeamMenbers(data, teamTwo, setTeamTwo)} 
+                    />
                 </div>
                 <div id='teamsHolder' class='teamsGrid'>
                     <div id='teamOne' class='playerGrid'>

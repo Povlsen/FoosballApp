@@ -28,7 +28,7 @@ const TopView = ({ scoreDetails }) => {
         </div>
     )   
 
-    const initialView = () => window.localStorage.getItem('view')
+    const initialView = () => window.localStorage.getItem('view') ?? 'view'
     const [view, setView] = useState(initialView)
     useEffect(_ => {
         window.localStorage.setItem('view', view)

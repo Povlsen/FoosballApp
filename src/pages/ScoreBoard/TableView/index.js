@@ -28,7 +28,7 @@ const TableView = ({ players }) => (
                         <p class='item-percentage'>{player.winRatio}%</p>
                     </Link>
                 </div>
-            )) 
+            ))
         }
 
     </div>

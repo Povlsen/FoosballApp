@@ -1,0 +1,15 @@
+@import '../../../styling/theme.scss';
+
+.team-dropdown {
+    grid-column: 1/3;
+    display: block;
+
+    .dropdown-menu {
+        display: block;
+
+        .dropdown-option {
+            display: block;
+        }
+    }
+}
+

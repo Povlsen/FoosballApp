@@ -39,17 +39,13 @@ const AddTeam = ({handleClose, show, children }) => {
                 </div>
                 <div class="selectTeamGrid">
                     <div>
-                        <img src={Player1}></img>
-                        <img src={Player2}></img>
-                        <button>Manage team &gt;</button>
+                        <Selector></Selector>
                         <Selector></Selector>
                     </div>
                     <h4>Vs.</h4>
                     <div>
                         <img src={Player3}></img>
                         <img src={Player4}></img>
-                        <button>Manage team &gt;</button>
-                        <Selector></Selector>
                     </div>
                 </div>
                 <div id='teamsHolder' class='teamsGrid'>

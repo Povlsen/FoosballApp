@@ -1,7 +1,27 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import Dropdown from 'react-dropdown';
+//import 'react-dropdown/style.css';
+import './PlayerSelector.scss'
 
 class Selector extends Component {
-    state = {
+    render() {
+
+        //https://www.npmjs.com/package/react-dropdown
+
+        const options = [
+            'Norre', 'Nikolai', 'Kenned', 'Emil'
+        ];
+        
+        return(
+            <Dropdown className='team-dropdown' options={options} onChange={this._onSelect} placeholder="Add player" />
+        )
+    }
+   
+
+
+
+
+    /*state = {
         activeMenu: 'min',
         open: true,
         player1: '',
@@ -21,15 +41,15 @@ class Selector extends Component {
     };
     
     getMenuOptions = () => {
-        let options = [];
+        let options = []
         switch(this.state.activeMenu){
             case 'Player1': {
                 options = ['Nikolai','Emil','Kenneth','Forfatter'];
-            break;
+            break
         }
         case 'Player2': {
             options = ['Nikolai','Emil','Kenneth','Forfatter'];
-            break;
+            break
         }
     }
     return options.map( (option, i) => {
@@ -68,7 +88,8 @@ class Selector extends Component {
         )}
         </div>
     )
-    }
+    }*/
+
 }
 
-export default Selector;
+export default Selector

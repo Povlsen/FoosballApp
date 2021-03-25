@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import ReactModal from 'react-modal';
+import React, { useState } from 'react'
+import ReactModal from 'react-modal'
 
 import './Player.scss'
 

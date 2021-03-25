@@ -1,11 +1,17 @@
-import React, { useEffect, useState } from 'react'
-import { connect } from 'react-redux'
+import React, { Component,useEffect, useState } from 'react'
+import { useForm } from "react-hook-form"
 import ReactModal from 'react-modal'
 import './AddUser.scss'
+import { postPlayer } from '../../actions/Players'
 
-const AddUser = () => {
-    const [showAddTeamModal, setShowAddTeamModal] = useState(false)
-        
+export default function AddUser() {
+    const [showAddTeamModal, setShowAddTeamModal] = useState(false);
+    const { register, handleSubmit, errors } = useForm();
+    const onSubmit = data => {
+        console.log(data);
+        postPlayer(data);
+    }
+
     return( 
         <>
             <button onClick={_ => setShowAddTeamModal(true)}>Add user</button>
@@ -18,21 +24,19 @@ const AddUser = () => {
                 <div class='modal-view' >
                     <div class='close-btn' onClick={_ => setShowAddTeamModal(false)}>Close</div>
                     <p>Add User</p>
-                    <form class='user-form'>
+                    <form class='user-form' onSubmit={handleSubmit(onSubmit)}>
                         <p class='lable'>Firstname:</p>
-                        <input type='text' class='input'></input>
+                        <input name='firstname' type='text' class='input' ref={register}></input>
                         <p class='lable'>Lastname:</p>
-                        <input type='text' class='input'></input>
+                        <input name='lastname' type='text' class='input' ref={register}></input>
                         <p class='lable'>Displayname:</p>
-                        <input type='text' class='input'></input>
+                        <input name='displayname' type='text' class='input' ref={register}></input>
                         <p class='lable'>Image:</p>
-                        <input type='file' class='input'></input>
-                        <button class='form-submit'>Add user:</button>
+                        <input name='image' type='file' class='input'></input>
+                        <button class='form-submit' >Add user</button>
                     </form>
                 </div>
             </ReactModal>
         </>
     )
 }
-
-export default AddUser

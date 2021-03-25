@@ -1,19 +1,12 @@
 import React, { Component } from 'react'
-import Dropdown from 'react-dropdown';
+//import Dropdown from 'react-dropdown';
 //import 'react-dropdown/style.css';
 import './PlayerSelector.scss'
 
 class Selector extends Component {
     render() {
-
-        //https://www.npmjs.com/package/react-dropdown
-
-        const options = [
-            'Norre', 'Nikolai', 'Kenned', 'Emil'
-        ];
-        
         return(
-            <Dropdown className='team-dropdown' options={options} onChange={this._onSelect} placeholder="Add player" />
+            <p>test</p>
         )
     }
    

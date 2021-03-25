@@ -2,6 +2,8 @@ import React, { Component, useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import ReactModal from 'react-modal'
 
+import AddUser from '../../../AddUser'
+
 import Kenneth from '../../../../assets/Kenneth.png'
 import './PlayerSelector.scss'
 
@@ -37,7 +39,7 @@ const Selector = ({ players, selectedIds, onChange }) => {
                         </div>
                         {players?.map(renderPlayerItem)}
                         <div class='list-item button-holder'>
-                            <button>Manage team</button>
+                            <AddUser/>
                         </div>                        
                     </div>
                 </div>

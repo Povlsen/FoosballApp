@@ -13,6 +13,7 @@ import Player4 from '../../assets/Nikolai.png'
 
 import Team from './Team';
 import TeamSelect from './TeamSelect'
+import AddUser from '../AddUser'
 
 const AddMatch = ({ handleClose, show, getPlayers }) => {
     const [teamOne, setTeamOne] = useState([{},{},{},{}])

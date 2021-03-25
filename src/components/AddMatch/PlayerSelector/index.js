@@ -3,6 +3,7 @@ import Kenneth from '../../../assets/Kenneth.png'
 import './PlayerSelector.scss'
 import { connect } from 'react-redux'
 import ReactModal from 'react-modal'
+import AddUser from '../../AddUser'
 
 const Selector = ({players}) => {
     const [showAddTeamModal, setShowAddTeamModal] = useState(false)
@@ -29,7 +30,7 @@ const Selector = ({players}) => {
                         }
                         
                         <div class='list-item button-holder' onclcik=''>
-                            <button>Add new player</button>
+                            <AddUser />
                         </div>
                         
                     </div>

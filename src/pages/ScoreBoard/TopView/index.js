@@ -1,12 +1,18 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './TopView.scss'
 import Emil from '../../../assets/emil.jpg'
 
 const TopView = ({ headline, players }) => {
+    const initialView = () => window.localStorage.getItem('view')
+    const [view, setView] = useState(initialView)
+    useEffect(_ => {
+        window.localStorage.setItem('view', view)
+    }, [view])
+
     if (!(Array.isArray(players) && players.length >= 3)) return null
 
     return (
-        <div class='view'>
+        <div class={view} onClick={_ => setView(view == 'view' ? 'view revert' : 'view')}>
             <p class='heading'>{headline}</p>
             <div class='podium'>
                 <div class='podium-item'>

@@ -5,11 +5,8 @@
   "dependencies": {
     "axios": "^0.20.0",
     "connected-react-router": "^6.8.0",
-<<<<<<< HEAD
     "local-storage": "^2.0.0",
-=======
     "multiselect-react-dropdown": "^1.6.11",
->>>>>>> e6057eb44d08cf0ee2c569d434560ab2c8a85e02
     "node-sass": "^4.14.1",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",

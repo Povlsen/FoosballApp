@@ -20,7 +20,7 @@ const ProfileView = ({ getPlayerScoreDetails }) => {
                 scoreDetails={scoreDetails}             
             />
             <TableView
-                matches={scoreDetails.aggregatedMatchScores}
+                aggregatedMatchs={scoreDetails.aggregatedMatchScores}
                 playersProfilePictures={scoreDetails.playersProfilePictures}
             />
         </>

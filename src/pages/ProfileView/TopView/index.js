@@ -49,7 +49,7 @@ const TopView = ({ scoreDetails }) => {
                 {statItem(`${losses} losses`, lossesRank)}
                 {statItem(`${goalsFrom} GF`, goalsFromRank)}
                 {statItem(`${goalsAgainst} GA`, goalsAgainstRank)}
-            </div>            
+            </div>
         </div>
     )
 }

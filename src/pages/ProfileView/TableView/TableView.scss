@@ -27,6 +27,12 @@
         margin-right: 5%;
         margin-bottom: 6px;
 
+        .table-group-header {
+            font-size: 12px;
+            color: rgba($white, 0.5);
+            text-align: right;
+        }
+
         .table-item {
             display: grid;
             text-align: center;
@@ -35,6 +41,7 @@
             border-radius: 20px;
             height: 60px;
             font-size: 12px;
+            margin: 3px 0;
 
             img {
                 margin-left: 5px;
@@ -54,11 +61,16 @@
                 margin-right: 5px;
             }
 
+            &.won {
             .item-score {
-                color: $red;
+                    color: $green;
+                }
             }
-            
-
+            &.lost {
+                .item-score {
+                    color: $red;
+                }
+            }
         }
     }
 }

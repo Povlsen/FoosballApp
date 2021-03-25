@@ -5,9 +5,11 @@ import TopViewElement from '../../../Elements/TopViewElement'
 
 const TopView = ({ scoreDetails }) => {
     let {
+        playerId,
         displayName,
         rank,
         totalMatches,
+        playersProfilePictures,
 
         wins,
         winsRank,
@@ -30,18 +32,20 @@ const TopView = ({ scoreDetails }) => {
 
     return( 
         <TopViewElement headline={displayName}>
-            <div class='pic-holder'>
-                <div class='place-lable'>
-                    <p class='place-lable-text'>{rank}</p>
+            <div className='profile-top-view'>
+                <div class='pic-holder'>
+                    <div class='place-lable'>
+                        <p class='place-lable-text'>{rank}</p>
+                    </div>
+                    <img class='pic' src={playersProfilePictures?.find(x => x.playerId === playerId)?.image ?? Emil}/>
                 </div>
-                <img class='pic' src={Emil}/>
-            </div>
-            <p class='matches-lable'>{totalMatches} matches</p>
-            <div class='stats-view'>
-                {statItem(`${wins} wins`, winsRank)}
-                {statItem(`${losses} losses`, lossesRank)}
-                {statItem(`${goalsFrom} GF`, goalsFromRank)}
-                {statItem(`${goalsAgainst} GA`, goalsAgainstRank)}
+                <p class='matches-lable'>{totalMatches} matches</p>
+                <div class='stats-view'>
+                    {statItem(`${wins} wins`, winsRank)}
+                    {statItem(`${losses} losses`, lossesRank)}
+                    {statItem(`${goalsFrom} GF`, goalsFromRank)}
+                    {statItem(`${goalsAgainst} GA`, goalsAgainstRank)}
+                </div>
             </div>
         </TopViewElement>
     )

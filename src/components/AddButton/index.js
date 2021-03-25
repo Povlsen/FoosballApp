@@ -23,6 +23,7 @@ const AddButton = themeColor => {
         </div>
     )
 }
+
 const mapStateToProps = ({ global }) => ({
     themeColor: global.themeColor
 })

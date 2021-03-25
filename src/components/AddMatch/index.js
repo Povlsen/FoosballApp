@@ -14,6 +14,7 @@ import Player2 from '../../assets/emil.jpg'
 import Player3 from '../../assets/Kenneth.png'
 import Player4 from '../../assets/Nikolai.png'
 
+import AddUser from '../AddUser'
 
 const AddMatch = ({ handleClose, show, getPlayers, addNewMatch }) => {
     const [teamOne, setTeamOne] = useState([{ playerId: 1 }, { playerId: 2 }])

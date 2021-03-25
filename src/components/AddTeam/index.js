@@ -1,22 +1,24 @@
 import React, { useState } from 'react';
 import ReactModal from 'react-modal';
 
-import './AddTeam.scss'
-import Player1 from 'src/assets/Forfatter.png'
-import Player2 from 'src/assets/emil.jpg'
-import Player3 from 'src/assets/Kenneth.png'
-import Player4 from 'src/assets/Nikolai.png'
+import './AddMatch.scss'
+import Player1 from '../../assets/Forfatter.png'
+import Player2 from '../../assets/emil.jpg'
+import Player3 from '../../assets/Kenneth.png'
+import Player4 from '../../assets/Nikolai.png'
 
 import Team from './Team';
 
 var teamOnePoints = 0;
 var teamTwoPoints = 0;
 
+var selectedUsers = [51,52,321,46];
+
 const AddTeam = ({handleClose, show, children }) => {
     if (show != true)
-        return null
+        return null;
 
-    /*return (
+    return (
         <ReactModal 
             isOpen={show} 
             onRequestClose={handleClose} 
@@ -75,8 +77,8 @@ const AddTeam = ({handleClose, show, children }) => {
                 </div>
             </div>
         </ReactModal>
-    );*/
-    return (
+    );
+    /*return (
         <ReactModal 
             isOpen={show} 
             onRequestClose={handleClose} 
@@ -125,7 +127,7 @@ const AddTeam = ({handleClose, show, children }) => {
                 </div>
             </div>
         </ReactModal>
-    );
+    );*/
 };
 
 function enforce_maxlength(event) {
@@ -149,7 +151,16 @@ function getNumberVal(elementId){
 }
 
 function sendMatch(){
-
+    var i = 0;
+    var players = [];
+    selectedUsers.forEach(element => {
+        i++;
+        var GF = getNumberVal('player'+i+'GF');
+        var GA = getNumberVal('player'+i+'GA');
+        var player = 'playerId/":'+element+',/"goalsFrom/":'+GF+',/"goalsAgainst/":'+GA;
+        players.push(player);
+    });
+    console.log(players)
 }
 
 export default AddTeam

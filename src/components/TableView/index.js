@@ -3,7 +3,7 @@ import './TableView.scss'
 import Forfatter from '../../assets/Forfatter.png'
 
 const TableView = props => (
-    <div class='table-view'>
+    <div class='table-view2'>
         <div class='table-heading'>
             <p></p>
             <p class='heading-1'>Player</p>
@@ -22,7 +22,7 @@ const TableView = props => (
                         <img src={Forfatter} />
                         <p class='item-name'>{user.displayName}</p>
                         <p class='item-wins'>{user.wins}</p>
-                        <p class='item-losses'>{user.looses}</p>
+                        <p class='item-losses'>{user.losses}</p>
                         <p class='item-total'>{user.totalMatches}</p>
                         <p class='item-percentage'>{user.winRatio}%</p>
                     </a>

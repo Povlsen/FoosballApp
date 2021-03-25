@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './TopView.scss'
 import Emil from '../../../assets/emil.jpg'
+import ls from 'local-storage'
 
 const TopView = ({ scoreDetails }) => {
     let {
@@ -25,10 +26,16 @@ const TopView = ({ scoreDetails }) => {
                 <p>{rank || ''}</p>
             </div>
         </div>
-    )
+    )   
 
-    return (
-        <div class='view'>
+    const initialView = () => window.localStorage.getItem('view')
+    const [view, setView] = useState(initialView)
+    useEffect(_ => {
+        window.localStorage.setItem('view', view)
+    }, [view])
+
+    return( 
+        <div class={view} onClick={_ => setView(view == 'view' ? 'view revert' : 'view')}>
             <p class='heading'>{displayName || ''} - Details</p>
             <div class='pic-holder'>
                 <div class='place-lable'>
@@ -46,5 +53,4 @@ const TopView = ({ scoreDetails }) => {
         </div>
     )
 }
-
 export default TopView

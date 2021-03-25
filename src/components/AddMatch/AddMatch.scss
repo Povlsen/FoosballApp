@@ -11,7 +11,6 @@ $shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(
     display: flex;
     justify-content: center;
     align-items: center;
-
     #background {
         background-color: $black;
         width: 90%;
@@ -25,7 +24,6 @@ $shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(
             margin-top: 2%;
             height: 5%;
         }
-
         .pointGrid {
             display: grid;
             height: 20%;
@@ -49,7 +47,6 @@ $shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(
                 }
             }
         }
-        
         .selectTeamGrid {
             display: grid;
             grid-template-columns: 45% 10% 45%;
@@ -75,7 +72,6 @@ $shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(
                     background-color: transparent;
                     color: rgba($white, 0.9);
                 }
-                
                 img {
                     height: 60px;
                     padding: 10px;
@@ -84,11 +80,9 @@ $shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(
                 }
                 h4 {
                     height: 110px;
-                }
-                
+                } 
             }
         }
-
         .teamsGrid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -122,7 +116,6 @@ $shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(
                         border-color: transparent;
                         text-align: center;
                         color: $white;
-                        
                     }
                     input:focus {
                         outline-color: transparent;
@@ -139,7 +132,6 @@ $shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(
                 }
             }
         }
-
         .buttonHolder{
             width: 100%;
             height: 15%;
@@ -164,7 +156,6 @@ $shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(
             button:focus{
                 outline-color: transparent;
                 outline-width: 0px;
-
             }
         }
     }

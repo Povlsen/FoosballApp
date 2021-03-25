@@ -1,19 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import './TopView.scss'
 import Emil from '../../../assets/emil.jpg'
+import TopViewElement from '../../../Elements/TopViewElement'
 
 const TopView = ({ headline, players }) => {
-    const initialView = () => window.localStorage.getItem('view')
-    const [view, setView] = useState(initialView)
-    useEffect(_ => {
-        window.localStorage.setItem('view', view)
-    }, [view])
-
     if (!(Array.isArray(players) && players.length >= 3)) return null
 
     return (
-        <div class={view} onClick={_ => setView(view == 'view' ? 'view revert' : 'view')}>
-            <p class='heading'>{headline}</p>
+        <TopViewElement headline={headline}>
             <div class='podium'>
                 <div class='podium-item'>
                     <div class='podium-item-1-top'>
@@ -61,7 +55,7 @@ const TopView = ({ headline, players }) => {
                     </div>
                 </div>
             </div>            
-        </div>
+        </TopViewElement>
     )
 }
 

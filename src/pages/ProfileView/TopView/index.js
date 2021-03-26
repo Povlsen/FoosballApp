@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
+import {Link} from 'react-router-dom'
 import './TopView.scss'
 import Emil from '../../../assets/emil.jpg'
+import back from '../../../assets/back.svg'
 import TopViewElement from '../../../Elements/TopViewElement'
 
 const TopView = ({ scoreDetails }) => {
@@ -33,6 +35,9 @@ const TopView = ({ scoreDetails }) => {
     return( 
         <TopViewElement headline={displayName}>
             <div className='profile-top-view'>
+                <Link class='back-btn' to='/'onClick={e => e.stopPropagation()}>
+                    <img src={back} />
+                </Link>
                 <div class='pic-holder'>
                     <div class='place-lable'>
                         <p class='place-lable-text'>{rank}</p>

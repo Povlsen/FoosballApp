@@ -4,10 +4,10 @@ import { useForm } from 'react-hook-form'
 
 import ReactModal from 'react-modal'
 
-import { postPlayer } from '../../actions/Players'
+import { postPlayer, getPlayers } from '../../actions/Players'
 import './AddUser.scss'
 
-const AddUser = ({ postPlayer }) => {
+const AddUser = ({ postPlayer, getPlayers }) => {
     const [showAddTeamModal, setShowAddTeamModal] = useState(false)
     const [selectedFile, setSelectedFile] = useState(null)
     const { register, handleSubmit, errors } = useForm()
@@ -15,7 +15,10 @@ const AddUser = ({ postPlayer }) => {
         postPlayer({
             ...data,
             profilePicture: selectedFile
-        }).then(_ => setShowAddTeamModal(false))
+        }).then(_ => {
+            getPlayers()
+            setShowAddTeamModal(false)
+        })
     }
 
     const onImage = async e => {
@@ -65,4 +68,5 @@ const AddUser = ({ postPlayer }) => {
 
 export default connect(null, {
     postPlayer,
+    getPlayers
 })(AddUser)

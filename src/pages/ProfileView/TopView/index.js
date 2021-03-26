@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import {Link} from 'react-router-dom'
 import './TopView.scss'
-import Emil from '../../../assets/emil.jpg'
 import back from '../../../assets/back.svg'
 import TopViewElement from '../../../Elements/TopViewElement'
 
@@ -42,7 +41,7 @@ const TopView = ({ scoreDetails }) => {
                     <div class='place-lable'>
                         <p class='place-lable-text'>{rank}</p>
                     </div>
-                    <img class='pic' src={playersProfilePictures?.find(x => x.playerId === playerId)?.image ?? Emil}/>
+                    <img class='pic' src={playersProfilePictures?.find(x => x.playerId === playerId)?.image ?? ''}/>
                 </div>
                 <p class='matches-lable'>{totalMatches} matches</p>
                 <div class='stats-view'>

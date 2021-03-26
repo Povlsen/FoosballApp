@@ -14,7 +14,7 @@ const TopView = ({ headline, players }) => {
                             <div class='place-lable'>
                                 <p class='place-lable-text'>2</p>
                             </div>
-                            <img class='pic' src={players[2].image ?? ''}/>
+                            <img class='pic' src={players[1].image ?? ''}/>
                         </div>
                         <p class='name-lable'>{players[1].displayName}</p>
                     </div>

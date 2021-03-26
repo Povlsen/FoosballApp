@@ -1,6 +1,5 @@
 import React from 'react'
 import './TableView.scss'
-import Forfatter from '../../../assets/Forfatter.png'
 
 const TableView = ({ aggregatedMatchs, playersProfilePictures }) => {    
     const renderMatchGroup = group => {
@@ -8,7 +7,7 @@ const TableView = ({ aggregatedMatchs, playersProfilePictures }) => {
             const getImage = id => playersProfilePictures?.find(x => x.playerId === id)[0]?.image
             return (
                 <>
-                    {playerIds?.map(p => <img src={getImage(p) ?? Forfatter} />)}  
+                    {playerIds?.map(p => <img src={getImage(p) ?? ''} />)}  
                 </>
             )
         }

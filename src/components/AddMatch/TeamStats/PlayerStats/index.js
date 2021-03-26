@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
-
 import './PlayerStats.scss'
 
-import Forfatter from '../../../../assets/Forfatter.png'
 
 const PlayerStats = ({ stats, updated, players }) => {
     const renderStatInput = (val, name, classes) => {
@@ -25,7 +23,7 @@ const PlayerStats = ({ stats, updated, players }) => {
     }
     return (
         <div>
-            <img src={players.find(p => p.playerId === stats.playerId)?.profilePicture ?? Forfatter} />
+            <img src={players.find(p => p.playerId === stats.playerId)?.profilePicture ?? ''} />
             {renderStatInput(stats.goalsFrom, 'goalsFrom', 'gf')}
             {renderStatInput(stats.goalsAgainst, 'goalsAgainst', 'ga')}
         </div>

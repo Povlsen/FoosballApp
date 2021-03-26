@@ -1,10 +1,8 @@
 import React, { Component, useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import ReactModal from 'react-modal'
-
 import AddUser from '../../../AddUser'
 
-import Kenneth from '../../../../assets/Kenneth.png'
 import './PlayerSelector.scss'
 
 const Selector = ({ players, selectedIds, onChange }) => {
@@ -18,7 +16,7 @@ const Selector = ({ players, selectedIds, onChange }) => {
         }
         return (
             <div class={`list-item ${isSelected ? 'selected' : ''}`} onClick={onClick}>
-                <img src={item.profilePicture ?? Kenneth} />
+                <img src={item.profilePicture ?? ''} />
                 <p>{item.displayName}</p>
             </div>
         )

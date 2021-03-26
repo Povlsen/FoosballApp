@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './TableView.scss'
-import Forfatter from '../../../assets/Forfatter.png'
 
 const TableView = ({ players }) => (
     <div class='score-board-table-view'>
@@ -20,7 +19,7 @@ const TableView = ({ players }) => (
                 <div class='table-data'>
                     <Link to={`/${player.playerId}`} class='table-item'>
                         <div class='item-number'>{index + 1}</div>
-                        <img src={player.image ?? Forfatter} />
+                        <img src={player.image ?? ''} />
                         <p class='item-name'>{player.displayName}</p>
                         <p class='item-wins'>{player.wins}</p>
                         <p class='item-losses'>{player.losses}</p>

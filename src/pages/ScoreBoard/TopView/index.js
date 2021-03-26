@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import './TopView.scss'
-import Emil from '../../../assets/emil.jpg'
 import TopViewElement from '../../../Elements/TopViewElement'
 
 const TopView = ({ headline, players }) => {
@@ -15,7 +14,7 @@ const TopView = ({ headline, players }) => {
                             <div class='place-lable'>
                                 <p class='place-lable-text'>2</p>
                             </div>
-                            <img class='pic' src={Emil}/>
+                            <img class='pic' src={players[2].image ?? ''}/>
                         </div>
                         <p class='name-lable'>{players[1].displayName}</p>
                     </div>
@@ -30,7 +29,7 @@ const TopView = ({ headline, players }) => {
                             <div class='place-lable'>
                                 <p class='place-lable-text'>1</p>
                             </div>
-                            <img class='pic' src={Emil}/>
+                            <img class='pic' src={players[0].image ?? ''}/>
                         </div>
                         <p class='name-lable'>{players[0].displayName}</p>
                     </div>
@@ -45,7 +44,7 @@ const TopView = ({ headline, players }) => {
                             <div class='place-lable'>
                                 <p class='place-lable-text'>3</p>
                             </div>
-                            <img class='pic' src={Emil}/>
+                            <img class='pic' src={players[2].image ?? ''}/>
                         </div>
                         <p class='name-lable'>{players[2].displayName}</p>
                     </div>

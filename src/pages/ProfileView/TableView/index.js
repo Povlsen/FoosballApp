@@ -4,7 +4,7 @@ import './TableView.scss'
 const TableView = ({ aggregatedMatchs, playersProfilePictures }) => {    
     const renderMatchGroup = group => {
         const getTeamImages = playerIds => {
-            const getImage = id => playersProfilePictures?.find(x => x.playerId === id)[0]?.image
+            const getImage = id => playersProfilePictures?.find(x => x.playerId === id)?.image
             return (
                 <>
                     {playerIds?.map(p => <img src={getImage(p) ?? ''} />)}  

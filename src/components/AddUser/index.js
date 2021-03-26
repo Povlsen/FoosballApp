@@ -9,12 +9,29 @@ import './AddUser.scss'
 
 const AddUser = ({ postPlayer }) => {
     const [showAddTeamModal, setShowAddTeamModal] = useState(false)
+    const [selectedFile, setSelectedFile] = useState(null)
     const { register, handleSubmit, errors } = useForm()
     const onSubmit = data => {        
-        postPlayer(data).then(_ => setShowAddTeamModal(false))
+        postPlayer({
+            ...data,
+            profilePicture: selectedFile
+        }).then(_ => setShowAddTeamModal(false))
     }
 
-    return( 
+    const onImage = async e => {
+        const toBase64 = async file => new Promise((resolve, reject) => {
+            const reader = new FileReader()
+            reader.readAsDataURL(file)
+            reader.onload = () => resolve(reader.result)
+            reader.onerror = error => reject(error)
+        })
+
+        let file = e.target.files[0]
+        if (file.type.startsWith('image/'))
+            setSelectedFile(await toBase64(file))
+    }
+
+    return (
         <>
             <button onClick={_ => setShowAddTeamModal(true)}>Add user</button>
         
@@ -34,8 +51,8 @@ const AddUser = ({ postPlayer }) => {
                         <p class='lable'>Displayname:</p>
                         <input name='displayName' type='text' class='input' ref={register}></input>
                         <p class='lable'>Image:</p>
-                        <input name='profilePicture' type='file' class='input'></input>
-                        <button class='form-submit' >Add user</button>
+                        <input name='profilePicture' type='file' class='input' onChange={onImage}></input>
+                        <button class='form-submit'>Add user</button>
                     </form>
                 </div>
             </ReactModal>
